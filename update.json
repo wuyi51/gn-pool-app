@@ -1,0 +1,10 @@
+{
+    "android": {
+        "appId": 0,
+        "appKey": "123"
+    },
+    "ios": {
+        "appId": 0,
+        "appKey": "123"
+    }
+}
