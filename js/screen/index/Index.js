@@ -35,20 +35,22 @@ class Index extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 180},GStyle.pd20]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 170},GStyle.pd20]}>
                      <View>
                         <Text style={ [GStyle.textWhite, GStyle.textXxxl, GStyle.textBold] }>荒野大镖客</Text>
-                        <Text style={ [GStyle.textWhite] }>账号状态: 正常</Text>
+                        <Text style={ [GStyle.textDarkX] }>账号状态: 正常</Text>
                      </View>
                     <View style={[GStyle.row, GStyle.mgt25]}>
-                        <View style={[styles.logo, GStyle.mgl20]}>
+                        <View style={[styles.logo, GStyle.mgl10]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/logo_light.png')}></Image>
                         </View>
-                        <View style={[GStyle.flex12]}>
-                            <Text style={[GStyle.center]}>3</Text>
+                        <View style={[GStyle.flex12,GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
+                            <Text style={[GStyle.textWhite,GStyle.textXl,GStyle.bdb,GStyle.pdb5,styles.bdCWhite]}>0.0092638 <Text style={[GStyle.textDarkX, GStyle.textMd]}> GN</Text></Text>
                         </View>
-                        <View style={[]}>
-                            <Text style={[GStyle.center]}>6</Text>
+                        <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
+                            <View style={[ GStyle.row, GStyle.posCC, GStyle.bgWhite,styles.btn]}>
+                                <Text style={[GStyle.center,GStyle.textBlack]}>提币</Text>
+                            </View>
                         </View>
                     </View>
                 </ImageBackground>
@@ -61,6 +63,17 @@ const styles = StyleSheet.create({
     logo: {
         width: 60,
         height: 60
+    },
+    logoHeight: {
+        height: 60
+    },
+    bdCWhite: {
+        borderColor: '#fff'
+    },
+    btn: {
+        width: 50,
+        height: 20,
+        borderRadius: 20
     }
 });
 
