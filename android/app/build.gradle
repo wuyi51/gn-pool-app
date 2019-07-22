@@ -122,10 +122,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file(GN_POOL_RELEASE_STORE_FILE)
-            storePassword GN_POOL_RELEASE_STORE_PASSWORD
-            keyAlias GN_POOL_RELEASE_KEY_ALIAS
-            keyPassword GN_POOL_RELEASE_KEY_PASSWORD
+
         }
     }
     buildTypes {
