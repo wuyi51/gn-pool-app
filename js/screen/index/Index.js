@@ -106,12 +106,12 @@ class Index extends React.Component{
                     <View style={[styles.lineSinger,GStyle.flex12,GStyle.mgl10]}>
                         <Image style={[styles.lineSingerImg]} source={require('../../../res/image/sky_4.png')}></Image>
                         {/*  通过height控制灰度范围，假设进度为60%，height值为（1-0.6）* 60    */}
-                        <View style={[styles.cover,{height: 10}]}>
+                        <View style={[styles.cover,{height: 0}]}>
                             <Image style={[styles.coverImg]} source={require('../../../res/image/sky_4_gray.png')}></Image>
                         </View>
-                        <View style={[styles.singer_info,GStyle.pd10,GStyle.posColBetween]}>
-                            <Text style={[GStyle.textWhite]}>自有算力</Text>
-                            <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                        <View style={[styles.singer_info,GStyle.pd10,GStyle.posRowBetween]}>
+                            <Text style={[GStyle.textWhite,GStyle.center]}>全网有效矿工</Text>
+                            <Text style={[GStyle.textWhite,GStyle.center]}>0人</Text>
                         </View>
                     </View>
                 </View>
