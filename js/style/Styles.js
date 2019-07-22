@@ -30,11 +30,12 @@ const createStyle = ()=>{
 	        right: 0
 		},
 		headerText: {
-			color: Colors.header
+			color: Colors.lightXX
 		},
 		header: {
-			//backgroundColor: Colors.under,
-			backgroundColor: Colors.bgPrimary,
+			// backgroundColor: Colors.under,
+			// backgroundColor: Colors.bgPrimary,
+			backgroundColor: Colors.darkMax,
 			borderBottomWidth: StyleSheet.hairlineWidth,
 			borderTopWidth: 0,
 			borderLeftWidth: 0,
@@ -107,16 +108,16 @@ const createStyle = ()=>{
 			paddingRight: 15,
 		},
 		loading: {
-			alignItems: 'center', 
-			position: 'absolute', 
-			backgroundColor: Colors.middle, 
+			alignItems: 'center',
+			position: 'absolute',
+			backgroundColor: Colors.middle,
 			right:0, left: 0, bottom: 0, top: 0,
 	    	justifyContent: 'center'
 		},
 		menu: {
 			backgroundColor: Colors.dark,
-			/*borderTopWidth: StyleSheet.hairlineWidth, 
-			borderBottomWidth: StyleSheet.hairlineWidth, 
+			/*borderTopWidth: StyleSheet.hairlineWidth,
+			borderBottomWidth: StyleSheet.hairlineWidth,
 			borderColor: Colors.light,*/
 			paddingTop: 10,
 			paddingBottom: 10,
@@ -128,7 +129,7 @@ const createStyle = ()=>{
 			top:-4,
 			right:-4,
 			padding:5,
-			backgroundColor: Colors.bgError, 
+			backgroundColor: Colors.bgError,
 			borderRadius:5
 		},
 		dotw: {
@@ -137,7 +138,7 @@ const createStyle = ()=>{
 			right:-4,
 			paddingHorizontal:6,
 			paddingVertical: 2,
-			backgroundColor: Colors.bgError, 
+			backgroundColor: Colors.bgError,
 			borderRadius:12
 		},
 		new: {
@@ -147,14 +148,14 @@ const createStyle = ()=>{
 			paddingLeft: 20,
 			paddingRight: 20,
 			paddingTop: 20,
-			backgroundColor: Colors.bgWarning, 
+			backgroundColor: Colors.bgWarning,
 			transform: [{rotate: '45deg'}]
 		},
 		hr: {
-			borderBottomWidth: StyleSheet.hairlineWidth, 
-			borderTopWidth: 0, 
-			borderLeftWidth: 0, 
-			borderRightWidth: 0, 
+			borderBottomWidth: StyleSheet.hairlineWidth,
+			borderTopWidth: 0,
+			borderLeftWidth: 0,
+			borderRightWidth: 0,
 			borderColor: Colors.darkX
 		},
 
@@ -248,7 +249,7 @@ const createStyle = ()=>{
 		bgWarning: {backgroundColor: Colors.bgWarning},
 		bgInfo: {backgroundColor: Colors.bgInfo},
 		bgError: {backgroundColor: Colors.bgError},
-		
+
 		bgWhite: {backgroundColor: Colors.white},
 		bgBlack: {backgroundColor: Colors.black},
 
@@ -270,21 +271,21 @@ const createStyle = ()=>{
 
 		mgBar: {marginTop: isIos ? IOS_HEADER_HEIGHT : ADNROID_HEADER_HEIGHT},
 		mg0: {margin: 0}, mg5: {margin: 5}, mg10: {margin: 10}, mg15: {margin: 15}, mg20: {margin: 20}, mg25: {margin: 25},
-		mgt0: {marginTop: 0}, mgt5: {marginTop: 5}, mgt10: {marginTop: 10}, mgt15: {marginTop: 15}, mgt20: {marginTop: 20}, mgt25: {marginTop: 25},  
-		mgb0: {marginBottom: 0}, mgb5: {marginBottom: 5}, mgb10: {marginBottom: 10}, mgb15: {marginBottom: 15}, mgb20: {marginBottom: 20}, mgb25: {marginBottom: 25},  
-		mgl0: {marginLeft: 0}, mgl5: {marginLeft: 5}, mgl10: {marginLeft: 10}, mgl15: {marginLeft: 15}, mgl20: {marginLeft: 20}, mgl25: {marginLeft: 25},  
-		mgr0: {marginRight: 0}, mgr5: {marginRight: 5}, mgr10: {marginRight: 10}, mgr15: {marginRight: 15}, mgr20: {marginRight: 20}, mgr25: {marginRight: 25}, 
-		mgh0: {marginHorizontal: 0}, mgh5: {marginHorizontal: 5}, mgh10: {marginHorizontal: 10}, mgh15: {marginHorizontal: 15}, mgh20: {marginHorizontal: 20}, mgh25: {marginHorizontal: 25},  
-		mgv0: {marginVertical: 0}, mgv5: {marginVertical: 5}, mgv10: {marginVertical: 10}, mgv15: {marginVertical: 15}, mgv20: {marginVertical: 20}, mgv25: {marginVertical: 25},  
+		mgt0: {marginTop: 0}, mgt5: {marginTop: 5}, mgt10: {marginTop: 10}, mgt15: {marginTop: 15}, mgt20: {marginTop: 20}, mgt25: {marginTop: 25},
+		mgb0: {marginBottom: 0}, mgb5: {marginBottom: 5}, mgb10: {marginBottom: 10}, mgb15: {marginBottom: 15}, mgb20: {marginBottom: 20}, mgb25: {marginBottom: 25},
+		mgl0: {marginLeft: 0}, mgl5: {marginLeft: 5}, mgl10: {marginLeft: 10}, mgl15: {marginLeft: 15}, mgl20: {marginLeft: 20}, mgl25: {marginLeft: 25},
+		mgr0: {marginRight: 0}, mgr5: {marginRight: 5}, mgr10: {marginRight: 10}, mgr15: {marginRight: 15}, mgr20: {marginRight: 20}, mgr25: {marginRight: 25},
+		mgh0: {marginHorizontal: 0}, mgh5: {marginHorizontal: 5}, mgh10: {marginHorizontal: 10}, mgh15: {marginHorizontal: 15}, mgh20: {marginHorizontal: 20}, mgh25: {marginHorizontal: 25},
+		mgv0: {marginVertical: 0}, mgv5: {marginVertical: 5}, mgv10: {marginVertical: 10}, mgv15: {marginVertical: 15}, mgv20: {marginVertical: 20}, mgv25: {marginVertical: 25},
 
 		pdBar: {paddingTop: isIos ? IOS_HEADER_HEIGHT : ADNROID_HEADER_HEIGHT},
-		pd0: {padding: 0}, pd5: {padding: 5}, pd10: {padding: 10}, pd15: {padding: 15}, pd20: {padding: 20}, pd25: {padding: 25},  
-		pdt5: {paddingTop: 5}, pdt10: {paddingTop: 10}, pdt15: {paddingTop: 15}, pdt20: {paddingTop: 20}, pdt25: {paddingTop: 25},  
-		pdb5: {paddingBottom: 5}, pdb10: {paddingBottom: 10}, pdb15: {paddingBottom: 15}, pdb20: {paddingBottom: 20}, pdb25: {paddingBottom: 25},  
-		pdl5: {paddingLeft: 5}, pdl10: {paddingLeft: 10}, pdl15: {paddingLeft: 15}, pdl20: {paddingLeft: 20}, pdl25: {paddingLeft: 25},  
-		pdr5: {paddingRight: 5}, pdr10: {paddingRight: 10}, pdr15: {paddingRight: 15}, pdr20: {paddingRight: 20}, pdr25: {paddingRight: 25}, 
-		pdh5: {paddingHorizontal: 5}, pdh10: {paddingHorizontal: 10}, pdh15: {paddingHorizontal: 15}, pdh20: {paddingHorizontal: 20}, pdh25: {paddingHorizontal: 25}, 
-		pdv5: {paddingVertical: 5}, pdv10: {paddingVertical: 10}, pdv15: {paddingVertical: 15}, pdv20: {paddingVertical: 20}, pdv25: {paddingVertical: 25}, 
+		pd0: {padding: 0}, pd5: {padding: 5}, pd10: {padding: 10}, pd15: {padding: 15}, pd20: {padding: 20}, pd25: {padding: 25},
+		pdt5: {paddingTop: 5}, pdt10: {paddingTop: 10}, pdt15: {paddingTop: 15}, pdt20: {paddingTop: 20}, pdt25: {paddingTop: 25},
+		pdb5: {paddingBottom: 5}, pdb10: {paddingBottom: 10}, pdb15: {paddingBottom: 15}, pdb20: {paddingBottom: 20}, pdb25: {paddingBottom: 25},
+		pdl5: {paddingLeft: 5}, pdl10: {paddingLeft: 10}, pdl15: {paddingLeft: 15}, pdl20: {paddingLeft: 20}, pdl25: {paddingLeft: 25},
+		pdr5: {paddingRight: 5}, pdr10: {paddingRight: 10}, pdr15: {paddingRight: 15}, pdr20: {paddingRight: 20}, pdr25: {paddingRight: 25},
+		pdh5: {paddingHorizontal: 5}, pdh10: {paddingHorizontal: 10}, pdh15: {paddingHorizontal: 15}, pdh20: {paddingHorizontal: 20}, pdh25: {paddingHorizontal: 25},
+		pdv5: {paddingVertical: 5}, pdv10: {paddingVertical: 10}, pdv15: {paddingVertical: 15}, pdv20: {paddingVertical: 20}, pdv25: {paddingVertical: 25},
 
 		center: {alignSelf: 'center'},
 		rowCenter: {justifyContent: 'center'},
@@ -316,6 +317,6 @@ const createStyle = ()=>{
 		warmBox:{backgroundColor:'#FCF0EE',borderWidth: 1, borderColor: '#f6d2ca'},
 
 		popMenuIcon: {width: 18,  height: 18}
-	});	
+	});
 }
 global.GStyle = createStyle();

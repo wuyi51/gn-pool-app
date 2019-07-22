@@ -38,6 +38,8 @@ import DemoScreen2 from "./screen/demo/DemoScreen2";
 import DemoScreen3 from "./screen/demo/DemoScreen3";
 import DemoScreen4 from "./screen/demo/DemoScreen4";
 
+import Index from "./screen/index/Index"
+
 
 const App = createStackNavigator(
     {
@@ -51,12 +53,14 @@ const App = createStackNavigator(
         Demo3: {screen: DemoScreen3,navigationOptions: {header:null}},
         Demo4: {screen: DemoScreen4,navigationOptions: {header:null}},
 
+        Index: {screen: Index,navigationOptions: {header:null}},
+
     },
     {
         //initialRouteName: isFirstUse() ? 'Welcome' : 'Tabs',
         //initialRouteName: 'HotUpdate',
         //initialRouteName: "CreateWallet",//'BackupMnemonic', //'CreateWalletSuccess',//'CreateWallet', 'CreateWalletSuccess'
-        initialRouteName: 'Demo',
+        initialRouteName: 'Index',
     }
 );
 

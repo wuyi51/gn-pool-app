@@ -15,10 +15,10 @@
 
 ### 打包js文件到bundle
 	android：
-		react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+		react-native bundle --platform android --dev false --entry-file Index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
 
 	ios：
-		react-native bundle --platform ios --dev false --entry-file ./index.js --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle
+		react-native bundle --platform ios --dev false --entry-file ./Index.js --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle
 
 ### 真机调试
 	需先打包js文件到bundle，然后执行：

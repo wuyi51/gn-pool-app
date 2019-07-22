@@ -71,8 +71,8 @@ React.Component.prototype.PopMenu = function(options, view){
     }
     UIManager.measure(findNodeHandle(this.refs[ref]), (x, y, w, h, px, py)=>{
         //console.log(` fx--${x},fy--${y},width--${w},height--${h},px--${px},py--${py}`);
-        let top = py + 3, 
-            right = 10, 
+        let top = py + 3,
+            right = 10,
             rightC = WINDOWS_WIDTH - px - w / 2 - right - 8;
 
         this.setState({
@@ -481,13 +481,13 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
 
         return (
             <View style={[{flex:1}, GStyle.bgUnder]}>
-                <StatusBar backgroundColor={this.state.__statusBarBgColor} barStyle="light-content" translucent={true}/>
+                <StatusBar backgroundColor={this.state.__statusBarBgColor} barStyle="dark-content" translucent={true}/>
                 {
-                hasHeader ? 
+                hasHeader ?
                 <View style={[ GStyle.header]}>
                     <View style={[ title ? GStyle.flex2 : GStyle.flex10, GStyle.row]}>
                     {
-                        this._backNav ? 
+                        this._backNav ?
                         <TouchableOpacity style={[styles.backIcon, GStyle.posCC]} onPress={this.__back}>
                             <FAIcon name="angle-left" size={26} color={Colors.header}></FAIcon>
                         </TouchableOpacity> : null
@@ -498,7 +498,7 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                     }
                     </View>
                     {
-                        title ? 
+                        title ?
                         <View style={[GStyle.flex8]}>
                             <Text style={[GStyle.center, GStyle.headerText, GStyle.textLg, GStyle.textBold]}>{title}</Text>
                         </View> : null
@@ -520,11 +520,11 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                 }
                 {super.render()}
                 {
-                    hasMenu ? 
+                    hasMenu ?
                         <View style={[ GStyle.bgWhite, GStyle.posRowAround, GStyle.pdb5, GStyle.bdDarkXX, GStyle.bdtHair]}>
                         {
                             [
-                                {nav: 'Demo', icon: 'home', name: I18n.t('menu_home')},
+                                {nav: 'Index', icon: 'home', name: I18n.t('menu_home')},
                                 {nav: 'Demo2', icon: 'miner', name: I18n.t('menu_miner')},
                                 //{nav: 'DiscoverScreen', icon: 'discover', name: I18n.t('menu_discover')},
                                 {nav: 'Demo3', icon: 'profile', name: I18n.t('menu_profile')}
@@ -597,9 +597,9 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                                 </TouchableOpacity>
                                 <View style={[GStyle.row,GStyle.posRowBetween,GStyle.mg10]}>
                                     <Text style={[GStyle.flex12,GStyle.mgh25, GStyle.textLightX,GStyle.textCenter,GStyle.textLg]}>{ news.title }</Text>
-                                    
+
                                 </View>
-                                
+
                                 <View style={[GStyle.hr]}></View>
                                 <ScrollView>
                                     <Text style={[GStyle.textLight,GStyle.pd15,{lineHeight:25}]}>        { news.content }</Text>
@@ -613,7 +613,7 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                     <TouchableOpacity style={[ GStyle.flex12 ]} activeOpacity={1}
                         onPress={()=>{this.setState({__popMenuVisible: false})}}>
                         <View style={[ styles.popMenu, {top: this.state.__popMenuTop, right: this.state.__popMenuRight} ]}>
-                            <FAIcon name="caret-up" size={30} 
+                            <FAIcon name="caret-up" size={30}
                                 style={[styles.popMenuCorner, {right: this.state.__popMenuCornerRight}]}/>
                             <View style={[styles.popMenuCtn]}>
                                 {
@@ -657,7 +657,7 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                     </TouchableOpacity>
                 </Modal>
                 {
-                    this.state.__toastVisible ? 
+                    this.state.__toastVisible ?
                     <Animated.View style={[styles.toastCtn, GStyle.center, GStyle.bgLight, GStyle.pdh15, GStyle.pdv5, {
                         opacity: this.state.__toastOpcity,
                         bottom: this.state.__toastBottom
@@ -667,11 +667,11 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                 }
                 <Loading ref='__loading' text={this.state.__loadingText}/>
                 {
-                    invalidVer ? 
+                    invalidVer ?
                     <TouchableOpacity style={GStyle.fullScreen} onPress={this.__checkVer}/> : null
                 }
             </View>
-            
+
         )
     }
 }
