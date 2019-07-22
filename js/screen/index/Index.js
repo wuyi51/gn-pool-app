@@ -35,11 +35,33 @@ class Index extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 180}]}>
-                    <Text>Inside</Text>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 180},GStyle.pd20]}>
+                     <View>
+                        <Text style={ [GStyle.textWhite, GStyle.textXxxl, GStyle.textBold] }>荒野大镖客</Text>
+                        <Text style={ [GStyle.textWhite] }>账号状态: 正常</Text>
+                     </View>
+                    <View style={[GStyle.row, GStyle.mgt25]}>
+                        <View style={[styles.logo, GStyle.mgl20]}>
+                            <Image style={ [styles.logo] } source={require('../../../res/image/logo_light.png')}></Image>
+                        </View>
+                        <View style={[GStyle.flex12]}>
+                            <Text style={[GStyle.center]}>3</Text>
+                        </View>
+                        <View style={[]}>
+                            <Text style={[GStyle.center]}>6</Text>
+                        </View>
+                    </View>
                 </ImageBackground>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    logo: {
+        width: 60,
+        height: 60
+    }
+});
+
 export default PageWrap(Index)
