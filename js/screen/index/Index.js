@@ -32,6 +32,12 @@ class Index extends React.Component{
 
     componentDidMount(){
     }
+
+    goToAccountDetail(){
+        this.__toMenu('AccountDetail', {});
+    }
+
+
     render(){
         return (
             <View style={ [GStyle.container] }>
@@ -54,67 +60,70 @@ class Index extends React.Component{
                         </View>
                     </View>
                 </ImageBackground>
-                <View style={ [GStyle.mgt15,GStyle.mgr15] }>
-                    <Text style={[GStyle.right,GStyle.textBlack]}>账户详情</Text>
-                </View>
-                <View style={ [GStyle.mgl0,GStyle.mgr10,GStyle.row,GStyle.mgt15] }>
-                    <View style={[styles.lineDouble,GStyle.flex12,GStyle.mgr10,GStyle.mgl10]}>
-                        <Image style={[styles.lineDoubleImg]} source={require('../../../res/image/sky_0.png')}></Image>
-                        {/*  通过height控制灰度范围，假设进度为60%，height值为（1-0.6）* 80    */}
-                        <View style={[styles.cover,{height: 32}]}>
-                            <Image style={[styles.coverImg]} source={require('../../../res/image/sky_0_gray.png')}></Image>
+                <ScrollView>
+                    <TouchableOpacity activeOpacity={0.5}  onPress={()=>this.goToAccountDetail()} style={ [GStyle.mgt15,GStyle.mgr15] }>
+                        <Text style={[GStyle.right,GStyle.textBlack]}>账户详情</Text>
+                    </TouchableOpacity>
+                    <View style={ [GStyle.mgl0,GStyle.mgr10,GStyle.row,GStyle.mgt15] }>
+                        <View style={[styles.lineDouble,GStyle.flex12,GStyle.mgr10,GStyle.mgl10]}>
+                            <Image style={[styles.lineDoubleImg]} source={require('../../../res/image/sky_0.png')}></Image>
+                            {/*  通过height控制灰度范围，假设进度为60%，height值为（1-0.6）* 80    */}
+                            <View style={[styles.cover,{height: 32}]}>
+                                <Image style={[styles.coverImg]} source={require('../../../res/image/sky_0_gray.png')}></Image>
+                            </View>
+                            <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
+                                <Text style={[GStyle.textWhite]}>自有算力</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                            </View>
                         </View>
-                        <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
-                            <Text style={[GStyle.textWhite]}>自有算力</Text>
-                            <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
-                        </View>
-                    </View>
-                    <View style={[styles.lineDouble,GStyle.flex12]}>
-                        <Image style={[styles.lineDoubleImg]} source={require('../../../res/image/sky_1.png')}></Image>
-                        <View style={[styles.cover,{height: 50}]}>
-                            <Image style={[styles.coverImg]} source={require('../../../res/image/sky_1_gray.png')}></Image>
-                        </View>
-                        <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
-                            <Text style={[GStyle.textWhite]}>自有算力</Text>
-                            <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={ [GStyle.mgl0,GStyle.mgr10,GStyle.row,GStyle.mgt15] }>
-                    <View style={[styles.lineDouble,GStyle.flex12,GStyle.mgr10,GStyle.mgl10]}>
-                        <Image style={[styles.lineDoubleImg]} source={require('../../../res/image/sky_2.png')}></Image>
-                        <View style={[styles.cover,{height: 17}]}>
-                            <Image style={[styles.coverImg]} source={require('../../../res/image/sky_2_gray.png')}></Image>
-                        </View>
-                        <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
-                            <Text style={[GStyle.textWhite]}>自有算力</Text>
-                            <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                        <View style={[styles.lineDouble,GStyle.flex12]}>
+                            <Image style={[styles.lineDoubleImg]} source={require('../../../res/image/sky_1.png')}></Image>
+                            <View style={[styles.cover,{height: 50}]}>
+                                <Image style={[styles.coverImg]} source={require('../../../res/image/sky_1_gray.png')}></Image>
+                            </View>
+                            <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
+                                <Text style={[GStyle.textWhite]}>自有算力</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                            </View>
                         </View>
                     </View>
-                    <View style={[styles.lineDouble,GStyle.flex12]}>
-                        <Image style={[styles.lineDoubleImg]} source={require('../../../res/image/sky_3.png')}></Image>
-                        <View style={[styles.cover,{height: 0}]}>
-                            <Image style={[styles.coverImg]} source={require('../../../res/image/sky_3_gray.png')}></Image>
+                    <View style={ [GStyle.mgl0,GStyle.mgr10,GStyle.row,GStyle.mgt15] }>
+                        <View style={[styles.lineDouble,GStyle.flex12,GStyle.mgr10,GStyle.mgl10]}>
+                            <Image style={[styles.lineDoubleImg]} source={require('../../../res/image/sky_2.png')}></Image>
+                            <View style={[styles.cover,{height: 17}]}>
+                                <Image style={[styles.coverImg]} source={require('../../../res/image/sky_2_gray.png')}></Image>
+                            </View>
+                            <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
+                                <Text style={[GStyle.textWhite]}>自有算力</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                            </View>
                         </View>
-                        <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
-                            <Text style={[GStyle.textWhite]}>自有算力</Text>
-                            <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                        <View style={[styles.lineDouble,GStyle.flex12]}>
+                            <Image style={[styles.lineDoubleImg]} source={require('../../../res/image/sky_3.png')}></Image>
+                            <View style={[styles.cover,{height: 0}]}>
+                                <Image style={[styles.coverImg]} source={require('../../../res/image/sky_3_gray.png')}></Image>
+                            </View>
+                            <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
+                                <Text style={[GStyle.textWhite]}>自有算力</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                            </View>
                         </View>
                     </View>
-                </View>
-                <View style={ [GStyle.mgl0,GStyle.mgr10,GStyle.row,GStyle.mgt15] }>
-                    <View style={[styles.lineSinger,GStyle.flex12,GStyle.mgl10]}>
-                        <Image style={[styles.lineSingerImg]} source={require('../../../res/image/sky_4.png')}></Image>
-                        {/*  通过height控制灰度范围，假设进度为60%，height值为（1-0.6）* 60    */}
-                        <View style={[styles.cover,{height: 0}]}>
-                            <Image style={[styles.coverImg]} source={require('../../../res/image/sky_4_gray.png')}></Image>
-                        </View>
-                        <View style={[styles.singer_info,GStyle.pd10,GStyle.posRowBetween]}>
-                            <Text style={[GStyle.textWhite,GStyle.center]}>全网有效矿工</Text>
-                            <Text style={[GStyle.textWhite,GStyle.center]}>0人</Text>
+                    <View style={ [GStyle.mgl0,GStyle.mgr10,GStyle.row,GStyle.mgt15] }>
+                        <View style={[styles.lineSinger,GStyle.flex12,GStyle.mgl10]}>
+                            <Image style={[styles.lineSingerImg]} source={require('../../../res/image/sky_4.png')}></Image>
+                            {/*  通过height控制灰度范围，假设进度为60%，height值为（1-0.6）* 60    */}
+                            <View style={[styles.cover,{height: 0}]}>
+                                <Image style={[styles.coverImg]} source={require('../../../res/image/sky_4_gray.png')}></Image>
+                            </View>
+                            <View style={[styles.singer_info,GStyle.pd10,GStyle.posRowBetween]}>
+                                <Text style={[GStyle.textWhite,GStyle.center]}>全网有效矿工</Text>
+                                <Text style={[GStyle.textWhite,GStyle.center]}>0人</Text>
+                            </View>
                         </View>
                     </View>
-                </View>
+                </ScrollView>
+
             </View>
         );
     }

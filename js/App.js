@@ -39,6 +39,7 @@ import DemoScreen3 from "./screen/demo/DemoScreen3";
 import DemoScreen4 from "./screen/demo/DemoScreen4";
 
 import Index from "./screen/index/Index"
+import AccountDetail from "./screen/index/AccountDetail"
 
 
 const App = createStackNavigator(
@@ -54,6 +55,7 @@ const App = createStackNavigator(
         Demo4: {screen: DemoScreen4,navigationOptions: {header:null}},
 
         Index: {screen: Index,navigationOptions: {header:null}},
+        AccountDetail: {screen: AccountDetail,navigationOptions: {header:null}},
 
     },
     {

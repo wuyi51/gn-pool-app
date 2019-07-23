@@ -489,7 +489,7 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                     {
                         this._backNav ?
                         <TouchableOpacity style={[styles.backIcon, GStyle.posCC]} onPress={this.__back}>
-                            <FAIcon name="angle-left" size={26} color={Colors.header}></FAIcon>
+                            <FAIcon name="angle-left" size={26} color={Colors.fore}></FAIcon>
                         </TouchableOpacity> : null
                     }
                     {
