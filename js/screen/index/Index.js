@@ -20,8 +20,7 @@ class Index extends React.Component{
         super(props);
         this.navigation = this.props.navigation;
         this.state = {
-            loading: false,
-            progress: 50
+
         }
         this.lastBackPress = 0;  //再按一次退出
 
