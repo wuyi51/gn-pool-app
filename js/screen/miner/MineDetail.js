@@ -66,34 +66,53 @@ class MineDetail extends React.Component{
                     </View>
                 </ImageBackground>
                 <ScrollView>
-                    <View style={[GStyle.row,GStyle.posCB,GStyle.mgt15]}>
-                        <TouchableOpacity
-                            style={styles.button}
-                            onPress={() => this.setState({isVisible: true})}>
-                            <Text style={[GStyle.black]}>{this.state.item || items[0]}</Text>
-                        </TouchableOpacity>
-                        <ListPopover
-                            list={items}
-                            popoverStyle={{
-                                backgroundColor: '#fff',
-                                width: 100,
-                                borderRadius: 5,
-
-                            }}
-                            containerStyle={{
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                position: 'absolute',
-                                width: 100,
-                                zIndex: 10,
-                                right: 10,
-                                top: 35,
-                            }}
-                            isVisible={this.state.isVisible}
-                            onClick={(item) => this.setState({item: item})}
-                            onClose={() => this.setState({isVisible: false})}/>
+                    <View style={[GStyle.posRowBetween,GStyle.mgt15,GStyle.mgl15]}>
+                        <Text style={[GStyle.textBlack]}>押注地址：5cd718cdf706dc3072be3875b4a076f4</Text>
                     </View>
-                    <View style={[GStyle.row,GStyle.mgl20,GStyle.mgr20,{ height: 400 }]}>
+                    <View style={[GStyle.posRowBetween,GStyle.mgt10,GStyle.mgl15, GStyle.mgr15]}>
+                        <Text style={[GStyle.textBlack]}>押注金额：0 GN  <Text style={[GStyle.textSuccess,GStyle.mgl10]}>  刷新</Text></Text>
+                        <Text style={[GStyle.textBlack]}>押注状态：未押注</Text>
+                    </View>
+                    <View style={[GStyle.posRowBetween,GStyle.mgt5,GStyle.mgl15, GStyle.mgr15]}>
+                        <Text style={[GStyle.textBlack]}>设备描述：测试</Text>
+                        <View style={[styles.unbindBtn,GStyle.posCC]}>
+                            <Text style={[styles.unbindBtnText]}>解绑</Text>
+                        </View>
+                    </View>
+                    <View style={[GStyle.row,GStyle.posRowBetween,GStyle.mgt20]}>
+                        <View style={[GStyle.mgl15,GStyle.mgt10]}>
+                            <Text style={[GStyle.textBlack,GStyle.textLg]}>设备日收益</Text>
+                        </View>
+                        <View>
+                            <TouchableOpacity
+                                style={styles.button}
+                                onPress={() => this.setState({isVisible: true})}>
+                                <Text style={[GStyle.black]}>{this.state.item || items[0]}</Text>
+                            </TouchableOpacity>
+                            <ListPopover
+                                list={items}
+                                popoverStyle={{
+                                    backgroundColor: '#fff',
+                                    width: 100,
+                                    borderRadius: 5,
+
+                                }}
+                                containerStyle={{
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    position: 'absolute',
+                                    width: 100,
+                                    zIndex: 10,
+                                    right: 10,
+                                    top: 35,
+                                }}
+                                isVisible={this.state.isVisible}
+                                onClick={(item) => this.setState({item: item})}
+                                onClose={() => this.setState({isVisible: false})}/>
+                        </View>
+
+                    </View>
+                    <View style={[GStyle.row,GStyle.mgl20,GStyle.mgr20,GStyle.mgb20,{ height: 400 }]}>
                         <YAxis
                             data={data}
                             contentInset={{top: 30, bottom: 30}}
@@ -157,6 +176,18 @@ const styles = StyleSheet.create({
         shadowColor: '#ddd',
         elevation: 3,
     },
+    unbindBtn:{
+        width: 60,
+        height: 25,
+        backgroundColor: 'rgba(221,68,34,0.2)',
+        borderRadius: 25,
+        borderWidth: 1,
+        borderColor: '#d42',
+
+    },
+    unbindBtnText: {
+        color: '#d42'
+    }
 });
 
 export default PageWrap(MineDetail)
