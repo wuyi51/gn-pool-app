@@ -525,7 +525,7 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                         {
                             [
                                 {nav: 'Index', icon: 'home', name: I18n.t('menu_home')},
-                                {nav: 'Demo2', icon: 'miner', name: I18n.t('menu_miner')},
+                                {nav: 'Miner', icon: 'miner', name: I18n.t('menu_miner')},
                                 //{nav: 'DiscoverScreen', icon: 'discover', name: I18n.t('menu_discover')},
                                 {nav: 'Demo3', icon: 'profile', name: I18n.t('menu_profile')}
                                 //{nav: 'Demo', icon: 'user', name: I18n.t('menu_profile')}
