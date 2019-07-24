@@ -41,6 +41,7 @@ import DemoScreen4 from "./screen/demo/DemoScreen4";
 import Index from "./screen/index/Index"
 import AccountDetail from "./screen/index/AccountDetail"
 import Miner from "./screen/miner/Miner"
+import MineDetail from "./screen/miner/MineDetail"
 
 
 const App = createStackNavigator(
@@ -58,6 +59,7 @@ const App = createStackNavigator(
         Index: {screen: Index,navigationOptions: {header:null}},
         AccountDetail: {screen: AccountDetail,navigationOptions: {header:null}},
         Miner: {screen: Miner,navigationOptions: {header:null}},
+        MineDetail: {screen: MineDetail,navigationOptions: {header:null}},
 
     },
     {

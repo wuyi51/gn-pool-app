@@ -75,11 +75,15 @@ class Miner extends React.Component{
     componentDidMount(){
     }
 
+    goToDetail(){
+        this.__toMenu('MineDetail', {});
+    }
+
     _keyExtractor = (item, index) => index;
 
     _renderItem({item}){
         return (
-            <View style={[styles.itemView,GStyle.mgl15,GStyle.mgr15,GStyle.mgb15,GStyle.pd15]}>
+            <TouchableOpacity activeOpacity={.8}  onPress={()=>this.goToDetail()} style={[styles.itemView,GStyle.mgl15,GStyle.mgr15,GStyle.mgb15,GStyle.pd15]}>
                 <View style={[GStyle.posRowBetween]}>
                     <Text style={[GStyle.textPrimary]}>状态：
                         <Text style={[item.status === 'ON' ? GStyle.textPrimary : GStyle.textError]}>{item.status === 'ON' ? '在线' : '离线'}</Text>
@@ -102,7 +106,7 @@ class Miner extends React.Component{
                     <Text style={[GStyle.textPrimary]}>描述：用来搜索</Text>
                     <Text style={[GStyle.textPrimary]}>最后上线：07-16 06:41</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 
@@ -192,7 +196,7 @@ class Miner extends React.Component{
                     keyExtractor={this._keyExtractor}
                     data={this.state.miners}
                     extraData={this.state}
-                    renderItem={this._renderItem}
+                    renderItem={this._renderItem.bind(this)}
                     ListFooterComponent={this._footerView}
                     ListHeaderComponent={this._footerView}
                     onEndReachedThreshold={0.01}
