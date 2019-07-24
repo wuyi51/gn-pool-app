@@ -15,6 +15,7 @@ import {
     FlatList,
     RefreshControl
 } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 
 
@@ -179,6 +180,9 @@ class Miner extends React.Component{
                             <Text style={[GStyle.textWhite,GStyle.textMd]}>矿机<Text style={[GStyle.textDarkX, GStyle.textXl]}> 4</Text> 台， 在线<Text style={[GStyle.textDarkX, GStyle.textXl]}> 0</Text> 台</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
+                            <View style={[styles.addWrap,GStyle.posCC, GStyle.row]}>
+                                <Icon name='md-add' size={22} color={Colors.white}/>
+                            </View>
                         </View>
                     </View>
                 </ImageBackground>
@@ -231,6 +235,13 @@ const styles = StyleSheet.create({
         elevation: 3,
         backgroundColor: '#fff',
         borderRadius: 10
+    },
+    addWrap: {
+        width: 30,
+        height: 30,
+        borderRadius: 30,
+        borderWidth: 2,
+        borderColor: '#fff'
     }
 });
 
