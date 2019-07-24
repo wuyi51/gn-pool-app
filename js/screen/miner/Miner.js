@@ -12,7 +12,8 @@ import {
     ToastAndroid,
     StyleSheet,
     ImageBackground,
-    FlatList
+    FlatList,
+    RefreshControl
 } from "react-native";
 
 
@@ -22,6 +23,7 @@ class Miner extends React.Component{
         super(props);
         this.navigation = this.props.navigation;
         this.state = {
+            isRefreshing: false,
             miners: [
                 {
                     id: 'ed1754d2e3b466763a99f248b02df1cc',
@@ -65,13 +67,14 @@ class Miner extends React.Component{
 
         this._title = "矿机";
         this._menu = true;
+        this.pageIndex = 1;
     }
 
 
     componentDidMount(){
     }
 
-    _keyExtractor = (item, index) => item.id;
+    _keyExtractor = (item, index) => index;
 
     _renderItem({item}){
         return (
@@ -104,10 +107,63 @@ class Miner extends React.Component{
 
     _footerView(){
         return(
-            <View style={[{height: 20}]}>
-
-            </View>
+            <View style={[{height: 15}]}/>
         )
+    }
+
+    _onRefresh(){
+       this.setState({
+           miners: [
+               {
+                   id: 'ed1754d2e3b466763a99f248b02df1cc',
+                   status: 'ON',
+                   mineStatus: 'ON',
+                   stakeStatus: 'Y'
+               },
+               {
+                   id: '1a79c3555ce2f24dfeb5e6c7fbfd38ba',
+                   status: 'ON',
+                   mineStatus: 'OFF',
+                   stakeStatus: 'Y'
+               },
+               {
+                   id: '5cd718cdf706dc3072be3875b4a076f4',
+                   status: 'OFF',
+                   mineStatus: 'OFF',
+                   stakeStatus: 'N'
+               }
+           ]
+       })
+    }
+
+    _checkMore(){
+        this.pageIndex++;
+        this.setState({
+            miners: this.state.miners.concat(
+                {
+                    id: 'ed1754d2e3b466763a99f248b02df1cc',
+                    status: 'ON',
+                    mineStatus: 'ON',
+                    stakeStatus: 'Y'
+                },
+                {
+                    id: '1a79c3555ce2f24dfeb5e6c7fbfd38ba',
+                    status: 'ON',
+                    mineStatus: 'OFF',
+                    stakeStatus: 'Y'
+                },
+                {
+                    id: '5cd718cdf706dc3072be3875b4a076f4',
+                    status: 'OFF',
+                    mineStatus: 'OFF',
+                    stakeStatus: 'N'
+                },
+            )
+        })
+    }
+
+    _getList(){
+
     }
 
     render(){
@@ -133,8 +189,21 @@ class Miner extends React.Component{
                     data={this.state.miners}
                     extraData={this.state}
                     renderItem={this._renderItem}
-                    style={[GStyle.pdt15,GStyle.pdb15]}
                     ListFooterComponent={this._footerView}
+                    ListHeaderComponent={this._footerView}
+                    onEndReachedThreshold={0.01}
+                    onEndReached={this._checkMore.bind(this)}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={this.state.isRefreshing}
+                            onRefresh={this._onRefresh.bind(this)}
+                            tintColor="#333"
+                            title="Loading..."
+                            titleColor="#333"
+                            colors={['#333', '#333', '#333']}
+                            progressBackgroundColor="#fff"
+                        />
+                    }
                 />
             </View>
         );
