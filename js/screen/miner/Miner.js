@@ -91,7 +91,7 @@ class Miner extends React.Component{
                 </View>
                 <Text style={[GStyle.textPrimary,GStyle.mgt5]}>设备ID：{item.id}</Text>
                 <View style={[GStyle.posRowBetween,GStyle.mgt5]}>
-                    <Text style={[GStyle.textPrimary]}>押注地址：ca92097fdbc424f6f8a2f8a98cf4acb9</Text>
+                    <Text numberOfLines={1} style={[GStyle.textPrimary,{width:WINDOWS_WIDTH - 120}]}>押注地址：ca92097fdbc424f6f8a2f8a98cf4acb9ca92097fdbc4</Text>
                     <Text style={[item.stakeStatus === 'Y' ? GStyle.textPrimary : GStyle.textError]}>{item.stakeStatus === 'Y' ? '(已押注)' : '(未押注)'}</Text>
                 </View>
                 <View style={[GStyle.posRowBetween,GStyle.mgt5]}>
