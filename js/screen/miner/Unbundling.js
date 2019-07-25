@@ -48,37 +48,37 @@ class Unbundling extends React.Component{
                     </View>
                 </ImageBackground>
                 <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
-                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb]}>
+                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
                         <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>ID</Text>
                         <View style={[GStyle.flex12]}>
                             <Text style={[GStyle.textBlack]}>5cd718cdf706dc3072be3875b4a076f4</Text>
                         </View>
                     </View>
-                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb]}>
+                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
                         <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>设备算力</Text>
                         <View style={[GStyle.flex12]}>
                             <Text style={[GStyle.textBlack]}>0 GB</Text>
                         </View>
                     </View>
-                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb]}>
+                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
                         <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>设备状态</Text>
                         <View style={[GStyle.flex12]}>
                             <Text style={[GStyle.textBlack]}>离线</Text>
                         </View>
                     </View>
-                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb]}>
+                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
                         <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>挖矿状态</Text>
                         <View style={[GStyle.flex12]}>
                             <Text style={[GStyle.textBlack]}>未挖矿</Text>
                         </View>
                     </View>
-                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb]}>
+                    <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
                         <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>押注状态</Text>
                         <View style={[GStyle.flex12]}>
                             <Text style={[GStyle.textBlack]}>未押注</Text>
                         </View>
                     </View>
-                    <View style={[GStyle.row,]}>
+                    <View style={[GStyle.row,GStyle.pdh10]}>
                         <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>验证码</Text>
                         <TextInput
                             underlineColorAndroid={'transparent'}
@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
     InputWrap: {
         backgroundColor: '#fff',
         borderRadius: 10,
-        paddingHorizontal: 10,
         shadowOffset: {width: 0, height: 5},
         shadowOpacity: 0.5,
         shadowRadius: 5,

@@ -527,7 +527,7 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                                 {nav: 'Index', icon: 'home', name: I18n.t('menu_home')},
                                 {nav: 'Miner', icon: 'miner', name: I18n.t('menu_miner')},
                                 //{nav: 'DiscoverScreen', icon: 'discover', name: I18n.t('menu_discover')},
-                                {nav: 'Demo3', icon: 'profile', name: I18n.t('menu_profile')}
+                                {nav: 'Profile', icon: 'profile', name: I18n.t('menu_profile')}
                                 //{nav: 'Demo', icon: 'user', name: I18n.t('menu_profile')}
                             ].map((_nav)=>{
                                 let color = currScreen == _nav.nav ? Colors.bgPrimary : Colors.light;
