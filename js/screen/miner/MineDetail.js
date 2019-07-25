@@ -15,13 +15,14 @@ import {
 } from "react-native";
 import _ from "lodash";
 import { BarChart, Grid, YAxis, XAxis } from 'react-native-svg-charts'
-import ListPopover from 'react-native-list-popover';
+import ListPopover from '../../components/ListPopover';
 let today = new Date().getTime();
 let items = [];
-for(let i = 0; i < 6; i++){
+for(let i = 0; i < 30; i++){
     let month = new Date(today).getMonth() + 1;
-    items.push(month + '月统计')
-    today = today - ( 86400000 * 30 )
+    let day = new Date(today).getDate();
+    items.push(month + '月' + day + '日')
+    today = today - 86400000
 }
 
 
@@ -49,8 +50,8 @@ class MineDetail extends React.Component{
         const contentInset = { top: 30, bottom: 30 }
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 120},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt20]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.pd20]}>
+                    <View style={[GStyle.row, GStyle.mgt15]}>
                         <View style={[styles.logo, GStyle.mgl10]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/miner_w.png')}></Image>
                         </View>
@@ -65,54 +66,55 @@ class MineDetail extends React.Component{
                         </View>
                     </View>
                 </ImageBackground>
+                <View style={[GStyle.posRowBetween,GStyle.mgt15,GStyle.mgl15]}>
+                    <Text style={[GStyle.textBlack]}>押注地址：5cd718cdf706dc3072be3875b4a076f4</Text>
+                </View>
+                <View style={[GStyle.posRowBetween,GStyle.mgt10,GStyle.mgl15, GStyle.mgr15]}>
+                    <Text style={[GStyle.textBlack]}>押注金额：0 GN  <Text style={[GStyle.textSuccess,GStyle.mgl10]}>  刷新</Text></Text>
+                    <Text style={[GStyle.textBlack]}>押注状态：未押注</Text>
+                </View>
+                <View style={[GStyle.posRowBetween,GStyle.mgt5,GStyle.mgl15, GStyle.mgr15]}>
+                    <Text style={[GStyle.textBlack]}>设备描述：测试</Text>
+                    <View style={[styles.unbindBtn,GStyle.posCC]}>
+                        <Text style={[styles.unbindBtnText]}>解绑</Text>
+                    </View>
+                </View>
+                <View style={[GStyle.row,GStyle.posRowBetween,GStyle.mgt20]}>
+                    <View style={[GStyle.mgl15,GStyle.mgt10]}>
+                        <Text style={[GStyle.textBlack,GStyle.textLg]}>设备日收益</Text>
+                    </View>
+                    <View>
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => this.setState({isVisible: true})}>
+                            <Text style={[GStyle.black]}>{this.state.item || items[0]}</Text>
+                        </TouchableOpacity>
+                        <ListPopover
+                            list={items}
+                            popoverStyle={{
+                                backgroundColor: '#fff',
+                                width: 100,
+                                borderRadius: 5,
+
+                            }}
+                            containerStyle={{
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                position: 'absolute',
+                                width: 100,
+                                zIndex: 10,
+                                right: 10,
+                                top: 35,
+                            }}
+                            isVisible={this.state.isVisible}
+                            onClick={(item) => this.setState({item: item})}
+                            onClose={() => this.setState({isVisible: false})}/>
+                    </View>
+
+                </View>
                 <ScrollView>
-                    <View style={[GStyle.posRowBetween,GStyle.mgt15,GStyle.mgl15]}>
-                        <Text style={[GStyle.textBlack]}>押注地址：5cd718cdf706dc3072be3875b4a076f4</Text>
-                    </View>
-                    <View style={[GStyle.posRowBetween,GStyle.mgt10,GStyle.mgl15, GStyle.mgr15]}>
-                        <Text style={[GStyle.textBlack]}>押注金额：0 GN  <Text style={[GStyle.textSuccess,GStyle.mgl10]}>  刷新</Text></Text>
-                        <Text style={[GStyle.textBlack]}>押注状态：未押注</Text>
-                    </View>
-                    <View style={[GStyle.posRowBetween,GStyle.mgt5,GStyle.mgl15, GStyle.mgr15]}>
-                        <Text style={[GStyle.textBlack]}>设备描述：测试</Text>
-                        <View style={[styles.unbindBtn,GStyle.posCC]}>
-                            <Text style={[styles.unbindBtnText]}>解绑</Text>
-                        </View>
-                    </View>
-                    <View style={[GStyle.row,GStyle.posRowBetween,GStyle.mgt20]}>
-                        <View style={[GStyle.mgl15,GStyle.mgt10]}>
-                            <Text style={[GStyle.textBlack,GStyle.textLg]}>设备日收益</Text>
-                        </View>
-                        <View>
-                            <TouchableOpacity
-                                style={styles.button}
-                                onPress={() => this.setState({isVisible: true})}>
-                                <Text style={[GStyle.black]}>{this.state.item || items[0]}</Text>
-                            </TouchableOpacity>
-                            <ListPopover
-                                list={items}
-                                popoverStyle={{
-                                    backgroundColor: '#fff',
-                                    width: 100,
-                                    borderRadius: 5,
 
-                                }}
-                                containerStyle={{
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    position: 'absolute',
-                                    width: 100,
-                                    zIndex: 10,
-                                    right: 10,
-                                    top: 35,
-                                }}
-                                isVisible={this.state.isVisible}
-                                onClick={(item) => this.setState({item: item})}
-                                onClose={() => this.setState({isVisible: false})}/>
-                        </View>
-
-                    </View>
-                    <View style={[GStyle.row,GStyle.mgl20,GStyle.mgr20,GStyle.mgb20,{ height: 400 }]}>
+                    <View style={[GStyle.row,GStyle.mgl20,GStyle.mgr20,GStyle.mgb20,{ height: 340 }]}>
                         <YAxis
                             data={data}
                             contentInset={{top: 30, bottom: 30}}
@@ -127,7 +129,7 @@ class MineDetail extends React.Component{
                             formatLabel={(value) => `${value}  `}
                         />
                         <View style={{flex: 1, marginLeft: 16}}>
-                            <BarChart style={{ height: 380}} data={data} svg={{ fill }} contentInset={contentInset}>
+                            <BarChart style={{ height: 320}} data={data} svg={{ fill }} contentInset={contentInset}>
                                 <Grid />
                             </BarChart>
                             <XAxis

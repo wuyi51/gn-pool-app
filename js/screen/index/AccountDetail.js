@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import _ from "lodash";
 import { BarChart, Grid, YAxis, XAxis } from 'react-native-svg-charts'
-import ListPopover from 'react-native-list-popover';
+import ListPopover from '../../components/ListPopover';
 let today = new Date().getTime();
 let items = [];
 for(let i = 0; i < 6; i++){
@@ -62,35 +62,36 @@ class AccountDetail extends React.Component{
                         </View>
                     </View>
                 </ImageBackground>
-                <ScrollView>
-                    <View style={[GStyle.row,GStyle.posCB,GStyle.mgt15]}>
-                        <TouchableOpacity
-                            style={styles.button}
-                            onPress={() => this.setState({isVisible: true})}>
-                            <Text style={[GStyle.black]}>{this.state.item || items[0]}</Text>
-                        </TouchableOpacity>
-                        <ListPopover
-                            list={items}
-                            popoverStyle={{
-                                backgroundColor: '#fff',
-                                width: 100,
-                                 borderRadius: 5,
+                <View style={[GStyle.row,GStyle.posCB,GStyle.mgt15]}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => this.setState({isVisible: true})}>
+                        <Text style={[GStyle.black]}>{this.state.item || items[0]}</Text>
+                    </TouchableOpacity>
+                    <ListPopover
+                        list={items}
+                        popoverStyle={{
+                            backgroundColor: '#fff',
+                            width: 100,
+                            borderRadius: 5,
 
-                            }}
-                            containerStyle={{
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                position: 'absolute',
-                                width: 100,
-                                zIndex: 10,
-                                right: 10,
-                                top: 35,
-                            }}
-                            isVisible={this.state.isVisible}
-                            onClick={(item) => this.setState({item: item})}
-                            onClose={() => this.setState({isVisible: false})}/>
-                    </View>
-                    <View style={[GStyle.row,GStyle.mgl20,GStyle.mgr20,{ height: 400 }]}>
+                        }}
+                        containerStyle={{
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            position: 'absolute',
+                            width: 100,
+                            zIndex: 10,
+                            right: 10,
+                            top: 35,
+                        }}
+                        isVisible={this.state.isVisible}
+                        onClick={(item) => this.setState({item: item})}
+                        onClose={() => this.setState({isVisible: false})}/>
+                </View>
+                <ScrollView>
+
+                    <View style={[GStyle.row,GStyle.mgl20,GStyle.mgr20,{ height: 360 }]}>
                         <YAxis
                             data={data}
                             contentInset={{top: 30, bottom: 30}}
@@ -105,7 +106,7 @@ class AccountDetail extends React.Component{
                             formatLabel={(value) => `${value}  `}
                         />
                         <View style={{flex: 1, marginLeft: 16}}>
-                            <BarChart style={{ height: 380}} data={data} svg={{ fill }} contentInset={contentInset}>
+                            <BarChart style={{ height: 340}} data={data} svg={{ fill }} contentInset={contentInset}>
                                 <Grid />
                             </BarChart>
                             <XAxis
