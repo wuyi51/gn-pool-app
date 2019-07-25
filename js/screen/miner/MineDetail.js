@@ -16,6 +16,7 @@ import {
 import _ from "lodash";
 import { BarChart, Grid, YAxis, XAxis } from 'react-native-svg-charts'
 import ListPopover from '../../components/ListPopover';
+import Unbundling from "./Unbundling";
 let today = new Date().getTime();
 let items = [];
 for(let i = 0; i < 30; i++){
@@ -41,6 +42,10 @@ class MineDetail extends React.Component{
 
 
     componentDidMount(){
+    }
+
+    goToUnbundling(){
+        this.__toMenu('Unbundling', {});
     }
 
 
@@ -75,9 +80,9 @@ class MineDetail extends React.Component{
                 </View>
                 <View style={[GStyle.posRowBetween,GStyle.mgt5,GStyle.mgl15, GStyle.mgr15]}>
                     <Text style={[GStyle.textBlack]}>设备描述：测试</Text>
-                    <View style={[styles.unbindBtn,GStyle.posCC]}>
+                    <TouchableOpacity activeOpacity={.5} onPress={()=>this.goToUnbundling()} style={[styles.unbindBtn,GStyle.posCC]}>
                         <Text style={[styles.unbindBtnText]}>解绑</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={[GStyle.row,GStyle.posRowBetween,GStyle.mgt20]}>
                     <View style={[GStyle.mgl15,GStyle.mgt10]}>
