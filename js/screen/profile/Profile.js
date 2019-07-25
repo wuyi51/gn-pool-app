@@ -97,6 +97,9 @@ class Profile extends React.Component{
                             </View>
                         </View>
                     </View>
+                    <View style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
+                        <Text style={[GStyle.textWhite]}>退出登录</Text>
+                    </View>
                     <View style={[GStyle.mgb20]}/>
                 </ScrollView>
 
@@ -120,6 +123,17 @@ const styles = StyleSheet.create({
         elevation: 3,
 
     },
+    submitBtn: {
+        backgroundColor: '#D11436',
+        width: 150,
+        height: 35,
+        borderRadius: 40,
+        shadowOffset: {width: 0, height: 5},
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        shadowColor: '#ddd',
+        elevation: 3,
+    }
 });
 
 
