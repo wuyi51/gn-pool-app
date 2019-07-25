@@ -79,6 +79,10 @@ class Miner extends React.Component{
         this.__toMenu('MineDetail', {});
     }
 
+    goToBindMiner(){
+        this.__toMenu('BindMine', {});
+    }
+
     _keyExtractor = (item, index) => index;
 
     _renderItem({item}){
@@ -184,9 +188,9 @@ class Miner extends React.Component{
                             <Text style={[GStyle.textWhite,GStyle.textMd]}>矿机<Text style={[GStyle.textDarkX, GStyle.textXl]}> 4</Text> 台， 在线<Text style={[GStyle.textDarkX, GStyle.textXl]}> 0</Text> 台</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
-                            <View style={[styles.addWrap,GStyle.posCC, GStyle.row]}>
+                            <TouchableOpacity activeOpacity={.5} onPress={()=>this.goToBindMiner()} style={[styles.addWrap,GStyle.posCC, GStyle.row]}>
                                 <Icon name='md-add' size={22} color={Colors.white}/>
-                            </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </ImageBackground>
