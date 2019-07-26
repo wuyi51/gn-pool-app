@@ -105,7 +105,7 @@ class Profile extends React.Component{
                                 <FAIcon name="angle-right" size={20}></FAIcon>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.pdh20]}>
+                        <TouchableOpacity onPress={()=>this.goToChangePassword('draw')} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.pdh20]}>
                             <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>修改提币密码</Text>
                             <View>
                                 <FAIcon name="angle-right" size={20}></FAIcon>

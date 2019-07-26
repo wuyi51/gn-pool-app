@@ -56,9 +56,9 @@ class BindMine extends React.Component{
                         value={this.state.keys}
                     />
                 </View>
-                <View style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
+                <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
                     <Text style={[GStyle.textWhite]}>矿机绑定</Text>
-                </View>
+                </TouchableOpacity>
 
             </View>
         );

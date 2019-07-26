@@ -54,9 +54,9 @@ class Recommend extends React.Component{
                         <Image style={ [styles.scan] } source={require('../../../res/image/camera.png')}></Image>
                     </View>
                 </View>
-                <View style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
+                <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
                     <Text style={[GStyle.textWhite]}>推荐绑定</Text>
-                </View>
+                </TouchableOpacity>
 
             </View>
         );

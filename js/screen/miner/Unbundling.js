@@ -89,9 +89,9 @@ class Unbundling extends React.Component{
                         />
                     </View>
                 </View>
-                <View style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
+                <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
                     <Text style={[GStyle.textWhite]}>矿机解绑</Text>
-                </View>
+                </TouchableOpacity>
 
             </View>
         );
