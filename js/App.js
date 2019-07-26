@@ -47,6 +47,7 @@ import Unbundling from "./screen/miner/Unbundling"
 import Profile from "./screen/profile/Profile"
 import Recommend from "./screen/profile/Recommend"
 import MyRecommend from "./screen/profile/MyRecommend"
+import ChangePassword from "./screen/profile/ChangePassword"
 
 
 const App = createStackNavigator(
@@ -70,6 +71,7 @@ const App = createStackNavigator(
         Profile: {screen: Profile,navigationOptions: {header:null}},
         Recommend: {screen: Recommend,navigationOptions: {header:null}},
         MyRecommend: {screen: MyRecommend,navigationOptions: {header:null}},
+        ChangePassword: {screen: ChangePassword,navigationOptions: {header:null}},
 
     },
     {
