@@ -42,6 +42,10 @@ class Profile extends React.Component{
         this.refs.codeModal.close()
     }
 
+    goToRecommend(){
+        this.__toMenu('Recommend', {});
+    }
+
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#f2f2f2'}] }>
@@ -60,7 +64,7 @@ class Profile extends React.Component{
                 </ImageBackground>
                 <ScrollView style={[{marginTop: -50}]}>
                     <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
-                        <TouchableOpacity activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
+                        <TouchableOpacity onPress={()=>this.goToRecommend()} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
                             <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>绑定推荐</Text>
                             <View>
                                 <FAIcon name="angle-right" size={20}></FAIcon>

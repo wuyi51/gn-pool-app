@@ -45,6 +45,7 @@ import MineDetail from "./screen/miner/MineDetail"
 import BindMine from "./screen/miner/BindMine"
 import Unbundling from "./screen/miner/Unbundling"
 import Profile from "./screen/profile/Profile"
+import Recommend from "./screen/profile/Recommend"
 
 
 const App = createStackNavigator(
@@ -66,6 +67,7 @@ const App = createStackNavigator(
         BindMine: {screen: BindMine,navigationOptions: {header:null}},
         Unbundling: {screen: Unbundling,navigationOptions: {header:null}},
         Profile: {screen: Profile,navigationOptions: {header:null}},
+        Recommend: {screen: Recommend,navigationOptions: {header:null}},
 
     },
     {
