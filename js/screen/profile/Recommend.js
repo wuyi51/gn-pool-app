@@ -15,8 +15,6 @@ import {
     TextInput
 } from "react-native";
 
-import { RNCamera } from 'react-native-camera';
-
 
 class Recommend extends React.Component{
     constructor(props){
@@ -59,14 +57,7 @@ class Recommend extends React.Component{
                 <View style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
                     <Text style={[GStyle.textWhite]}>推荐绑定</Text>
                 </View>
-                {/*<RNCamera*/}
-                {/*    style={styles.preview}*/}
-                {/*    type={RNCamera.Constants.Type.back}*/}
-                {/*    googleVisionBarcodeType={RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.QR_CODE}*/}
-                {/*    flashMode={RNCamera.Constants.FlashMode.auto}*/}
-                {/*    onBarCodeRead={(e) => this.barcodeReceived(e)}*/}
-                {/*>*/}
-                {/*</RNCamera*/}>*/}
+
             </View>
         );
     }

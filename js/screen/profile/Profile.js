@@ -46,6 +46,10 @@ class Profile extends React.Component{
         this.__toMenu('Recommend', {});
     }
 
+    goToMyRecommend(){
+        this.__toMenu('MyRecommend', {});
+    }
+
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#f2f2f2'}] }>
@@ -70,7 +74,7 @@ class Profile extends React.Component{
                                 <FAIcon name="angle-right" size={20}></FAIcon>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
+                        <TouchableOpacity onPress={()=>this.goToMyRecommend()} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
                             <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>我推荐的会员</Text>
                             <View>
                                 <FAIcon name="angle-right" size={20}></FAIcon>
