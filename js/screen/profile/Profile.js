@@ -13,14 +13,15 @@ import {
     StyleSheet, ImageBackground, TextInput
 } from "react-native";
 import FAIcon from 'react-native-vector-icons/FontAwesome';
+import Modals from 'react-native-modalbox';
+import QRCode from 'react-native-qrcode';
 
 class Profile extends React.Component{
     constructor(props){
         super(props);
         this.navigation = this.props.navigation;
         this.state = {
-            loading: false,
-            progress: 50
+            user_name: '荒野大镖客'
         }
         this.lastBackPress = 0;  //再按一次退出
 
@@ -32,6 +33,15 @@ class Profile extends React.Component{
     componentDidMount(){
 
     }
+
+    showCode(){
+        this.refs.codeModal.open()
+    }
+
+    closeModal(){
+        this.refs.codeModal.close()
+    }
+
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#f2f2f2'}] }>
@@ -39,10 +49,10 @@ class Profile extends React.Component{
                     <View style={[GStyle.row, GStyle.mgt15]}>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
                             <Text style={[GStyle.textDarkX,GStyle.textXxxl,GStyle.textBold]}>AndyChen</Text>
-                            <Text style={[GStyle.textWhite,GStyle.textLg]}>荒野大镖客</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textLg]}>{this.state.user_name}</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
-                            <TouchableOpacity activeOpacity={.5}>
+                            <TouchableOpacity activeOpacity={.5} onPress={()=>this.showCode()}>
                                 <Image style={[styles.QRIcon]} source={require('../../../res/image/QR_code.png')}></Image>
                             </TouchableOpacity>
                         </View>
@@ -51,7 +61,7 @@ class Profile extends React.Component{
                 <ScrollView style={[{marginTop: -50}]}>
                     <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                         <TouchableOpacity activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
-                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>我的推荐</Text>
+                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>绑定推荐</Text>
                             <View>
                                 <FAIcon name="angle-right" size={20}></FAIcon>
                             </View>
@@ -102,7 +112,23 @@ class Profile extends React.Component{
                     </View>
                     <View style={[GStyle.mgb20]}/>
                 </ScrollView>
-
+                <Modals style={[styles.codeModal]}
+                        position={"center"}
+                        ref={"codeModal"}
+                        entry={'top'}
+                        swipeToClose={false}
+                        swipeArea={0}
+                >
+                    <TouchableOpacity onPress={()=>this.closeModal()} activeOpacity={1} style={[GStyle.posCC,GStyle.flex12]}>
+                        <Text style={[GStyle.textXxl,GStyle.mgb15,GStyle.textBlack]}>{this.state.user_name}</Text>
+                        <QRCode
+                            value={this.state.user_name}
+                            size={200}
+                            bgColor='black'
+                            fgColor='white'/>
+                        <Text style={[GStyle.textMd,GStyle.mgt15,GStyle.textDark]}>扫一扫绑定关系</Text>
+                    </TouchableOpacity>
+                </Modals>
             </View>
         );
     }
@@ -133,6 +159,9 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         shadowColor: '#ddd',
         elevation: 3,
+    },
+    codeModal: {
+
     }
 });
 
