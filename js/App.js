@@ -48,6 +48,7 @@ import Profile from "./screen/profile/Profile"
 import Recommend from "./screen/profile/Recommend"
 import MyRecommend from "./screen/profile/MyRecommend"
 import ChangePassword from "./screen/profile/ChangePassword"
+import BindGoogleCode from "./screen/profile/BindGoogleCode"
 
 
 const App = createStackNavigator(
@@ -72,6 +73,7 @@ const App = createStackNavigator(
         Recommend: {screen: Recommend,navigationOptions: {header:null}},
         MyRecommend: {screen: MyRecommend,navigationOptions: {header:null}},
         ChangePassword: {screen: ChangePassword,navigationOptions: {header:null}},
+        BindGoogleCode: {screen: BindGoogleCode,navigationOptions: {header:null}},
 
     },
     {

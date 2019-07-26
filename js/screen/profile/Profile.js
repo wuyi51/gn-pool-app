@@ -54,6 +54,10 @@ class Profile extends React.Component{
         this.__toMenu('ChangePassword', {type: type});
     }
 
+    goToBindGoogleCode(type){
+        this.__toMenu('BindGoogleCode', {type: type});
+    }
+
 
     render(){
         return (
@@ -93,7 +97,7 @@ class Profile extends React.Component{
                         </TouchableOpacity>
                     </View>
                     <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
-                        <TouchableOpacity  activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
+                        <TouchableOpacity onPress={()=>this.goToBindGoogleCode()} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
                             <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>绑定谷歌验证码</Text>
                             <View>
                                 <FAIcon name="angle-right" size={20}></FAIcon>
