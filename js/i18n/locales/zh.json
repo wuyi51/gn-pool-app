@@ -103,6 +103,7 @@
   ,"menu_contact": "通讯录"
   ,"menu_home": "首页"
   ,"menu_miner": "矿机"
+  ,"menu_news": "银河动态"
 
   //创建钱包
   ,"wallet_create_title": "创建钱包"
@@ -157,7 +158,7 @@
   ,"wallet_mnemonic_tip3": "确认你的钱包助记词"
   ,"wallet_mnemonic_tip4": "请按顺序点击助记词，以确认你的备份助记词准确。"
 
-  
+
   ,"market_assetName": "资产名称"
   ,"market_price": "最新价"
   ,"market_change": "涨跌幅"
@@ -201,7 +202,7 @@
   ,"asset_transfer_gas_suggest2":"之间，gas limit在60,000-80,000之间 "
 
   ,"asset_search_placeholder":"请输入Token名称或合约地址"
-  
+
   ,"asset_send_success": "转账成功"
   ,"asset_send_fail": "转账失败"
   ,"asset_receive_success": "收款成功"

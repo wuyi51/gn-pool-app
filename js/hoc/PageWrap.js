@@ -477,6 +477,8 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
             home_a: require('../../res/image/menu_home_a.png'),
             miner: require('../../res/image/menu_miner.png'),
             miner_a: require('../../res/image/menu_miner_a.png'),
+            news: require('../../res/image/menu_news.png'),
+            news_a: require('../../res/image/menu_news_a.png'),
         };
 
         return (
@@ -527,6 +529,7 @@ global.PageWrap = (WrappedComponent) => class PageWrap extends WrappedComponent 
                                 {nav: 'Index', icon: 'home', name: I18n.t('menu_home')},
                                 {nav: 'Miner', icon: 'miner', name: I18n.t('menu_miner')},
                                 //{nav: 'DiscoverScreen', icon: 'discover', name: I18n.t('menu_discover')},
+                                {nav: 'News', icon: 'news', name: I18n.t('menu_news')},
                                 {nav: 'Profile', icon: 'profile', name: I18n.t('menu_profile')}
                                 //{nav: 'Demo', icon: 'user', name: I18n.t('menu_profile')}
                             ].map((_nav)=>{
