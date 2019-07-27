@@ -13,9 +13,11 @@ import {
     StyleSheet,
     ImageBackground,
     FlatList,
-    RefreshControl
+    RefreshControl,
+    TextInput
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import FAIcon from 'react-native-vector-icons/FontAwesome';
 
 
 
@@ -25,6 +27,11 @@ class Miner extends React.Component{
         this.navigation = this.props.navigation;
         this.state = {
             isRefreshing: false,
+            status: 0,
+            mining: 0,
+            stake: 0,
+            search_type: 0,
+            keywords: '',
             miners: [
                 {
                     id: 'ed1754d2e3b466763a99f248b02df1cc',
@@ -175,6 +182,60 @@ class Miner extends React.Component{
 
     }
 
+    changeStatus(){
+        if(this.state.status === 0){
+            this.setState({
+                status: 1
+            })
+        }else if(this.state.status === 1){
+            this.setState({
+                status: 2
+            })
+        }else if(this.state.status === 2){
+            this.setState({
+                status: 0
+            })
+        }
+    }
+
+    changeMining(){
+        if(this.state.mining === 0){
+            this.setState({
+                mining: 1
+            })
+        }else if(this.state.mining === 1){
+            this.setState({
+                mining: 2
+            })
+        }else if(this.state.mining === 2){
+            this.setState({
+                mining: 0
+            })
+        }
+    }
+
+    changeStake(){
+        if(this.state.stake === 0){
+            this.setState({
+                stake: 1
+            })
+        }else if(this.state.stake === 1){
+            this.setState({
+                stake: 2
+            })
+        }else if(this.state.stake === 2){
+            this.setState({
+                stake: 0
+            })
+        }
+    }
+
+    _changeSearchType(){
+        this.setState({
+            search_type: this.state.search_type === 0 ? 1 : 0
+        })
+    }
+
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#f2f2f2'}] }>
@@ -194,7 +255,114 @@ class Miner extends React.Component{
                         </View>
                     </View>
                 </ImageBackground>
-                <View style={[styles.ctrBar]}>
+                <View style={[styles.ctrBar,GStyle.posRowBetween,GStyle.mgl15,GStyle.mgr15]}>
+                    {
+                        this.state.search_type === 0 ?
+                            <TouchableOpacity onPress={()=>this.changeStatus()} activeOpacity={.5}
+                                              style={[styles.status_bar,
+                                                  this.state.status === 0 ?
+                                                      styles.bgInfo
+                                                      :
+                                                      this.state.status === 1 ?
+                                                          styles.bgGreen
+                                                          :
+                                                          styles.bgRed
+                                              ]}
+                            >
+                                {
+                                    this.state.status === 0 ?
+                                        <Text style={[GStyle.textBlack]}>状态</Text>
+                                        :
+                                        this.state.status === 1 ?
+                                            <Text style={[styles.textGreen]}>在线</Text>
+                                            :
+                                            <Text style={[GStyle.textError]}>离线</Text>
+
+                                }
+                            </TouchableOpacity>
+                            :
+                            <View/>
+                    }
+                    {
+                        this.state.search_type === 0 ?
+                            <TouchableOpacity onPress={()=>this.changeMining()} activeOpacity={.5}
+                                              style={[styles.status_bar,
+                                                  this.state.mining === 0 ?
+                                                      styles.bgInfo
+                                                      :
+                                                      this.state.mining === 1 ?
+                                                          styles.bgGreen
+                                                          :
+                                                          styles.bgRed
+                                              ]}
+                            >
+                                {
+                                    this.state.mining === 0 ?
+                                        <Text style={[GStyle.textBlack]}>挖矿</Text>
+                                        :
+                                        this.state.mining === 1 ?
+                                            <Text style={[styles.textGreen]}>挖矿中</Text>
+                                            :
+                                            <Text style={[GStyle.textError]}>未挖矿</Text>
+
+                                }
+                            </TouchableOpacity>
+                            :
+                            <View/>
+                    }
+
+                    {
+                        this.state.search_type === 0 ?
+                            <TouchableOpacity onPress={()=>this.changeStake()} activeOpacity={.5}
+                                              style={[styles.status_bar,
+                                                  this.state.stake === 0 ?
+                                                      styles.bgInfo
+                                                      :
+                                                      this.state.stake === 1 ?
+                                                          styles.bgGreen
+                                                          :
+                                                          styles.bgRed
+                                              ]}
+                            >
+                                {
+                                    this.state.stake === 0 ?
+                                        <Text style={[GStyle.textBlack]}>押注</Text>
+                                        :
+                                        this.state.stake === 1 ?
+                                            <Text style={[styles.textGreen]}>已押注</Text>
+                                            :
+                                            <Text style={[GStyle.textError]}>未押注</Text>
+
+                                }
+                            </TouchableOpacity>
+                            :
+                            <View/>
+                    }
+
+                    {
+                        this.state.search_type === 0 ?
+                            <View/>
+                            :
+                            <View style={[styles.searchView]}>
+                                <FAIcon name="search" size={16}></FAIcon>
+                                <TextInput
+                                    underlineColorAndroid={'transparent'}
+                                    placeholder={'设备描述'}
+                                    style={[GStyle.flex12,styles.searchInput]}
+                                    onChangeText={(keywords) => this.setState({keywords})}
+                                    value={this.state.keywords}
+                                    />
+                            </View>
+                    }
+
+
+
+                    <View style={[styles.status_bar]}>
+                        <Text style={[GStyle.textBlack]}>搜索</Text>
+                    </View>
+                    <TouchableOpacity onPress={()=>{this._changeSearchType()}} activeOpacity={.5} style={[styles.status_bar_change]}>
+                        <Icon name='md-arrow-dropdown' size={22} color={Colors.black}></Icon>
+                    </TouchableOpacity>
                 </View>
                 <FlatList
                     keyExtractor={this._keyExtractor}
@@ -232,7 +400,7 @@ const styles = StyleSheet.create({
     },
     ctrBar: {
         height: 50,
-        backgroundColor: '#ddd'
+        alignItems: 'center'
     },
     itemView: {
         height: 110,
@@ -250,6 +418,56 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         borderWidth: 2,
         borderColor: '#fff'
+    },
+    status_bar: {
+        width: 60,
+        height: 30,
+        backgroundColor: 'rgb(213,213,213)',
+        borderRadius: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: 'rgb(213,213,213)'
+    },
+    status_bar_change: {
+        width: 20,
+
+    },
+    textGreen: {
+        color: '#15a200'
+    },
+    bgInfo: {
+        backgroundColor: 'rgb(213,213,213)',
+        borderColor: 'rgb(213,213,213)'
+    },
+    bgGreen: {
+        backgroundColor: 'rgba(21,162,0,0.2)',
+        borderColor: 'rgba(21,162,0,1)'
+    },
+    bgRed: {
+        backgroundColor: 'rgba(221,83,54,0.2)',
+        borderColor: 'rgba(221,83,54,1)'
+    },
+    searchView: {
+        width: WINDOWS_WIDTH - 150,
+        shadowOffset: {width: 0, height: 5},
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        shadowColor: '#ddd',
+        elevation: 3,
+        backgroundColor: '#fff',
+        borderRadius: 35,
+        marginRight: 10,
+        height: 35,
+        flexDirection: 'row',
+        alignItems:'center',
+        paddingLeft: 10
+
+    },
+    searchInput: {
+        height: 30,
+        padding: 0,
+        marginLeft: 10
     }
 });
 

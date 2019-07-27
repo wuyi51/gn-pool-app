@@ -46,6 +46,14 @@ class Login extends React.Component{
         this.setState({tab_index})
     }
 
+    _login(){
+
+    }
+
+    _register(){
+
+    }
+
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
@@ -73,7 +81,7 @@ class Login extends React.Component{
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>密  码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>密     码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请输入密码'}
@@ -177,11 +185,11 @@ class Login extends React.Component{
                     }
                     {
                         this.state.tab_index === 0 ?
-                            <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt25,GStyle.posCC]}>
+                            <TouchableOpacity onPress={()=>this._login()} activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt25,GStyle.posCC]}>
                                 <Text style={[GStyle.textWhite]}>登录</Text>
                             </TouchableOpacity>
                             :
-                            <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
+                            <TouchableOpacity onPress={()=>this._register()} activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
                                 <Text style={[GStyle.textWhite]}>注册</Text>
                             </TouchableOpacity>
                     }
