@@ -39,6 +39,7 @@ import DemoScreen3 from "./screen/demo/DemoScreen3";
 import DemoScreen4 from "./screen/demo/DemoScreen4";
 
 import Index from "./screen/index/Index"
+import Login from "./screen/login/Login"
 import AccountDetail from "./screen/index/AccountDetail"
 import Miner from "./screen/miner/Miner"
 import MineDetail from "./screen/miner/MineDetail"
@@ -74,6 +75,7 @@ const App = createStackNavigator(
         MyRecommend: {screen: MyRecommend,navigationOptions: {header:null}},
         ChangePassword: {screen: ChangePassword,navigationOptions: {header:null}},
         BindGoogleCode: {screen: BindGoogleCode,navigationOptions: {header:null}},
+        Login: {screen: Login,navigationOptions: {header:null}},
 
     },
     {

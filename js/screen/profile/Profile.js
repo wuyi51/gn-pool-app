@@ -58,6 +58,10 @@ class Profile extends React.Component{
         this.__toMenu('BindGoogleCode', {type: type});
     }
 
+    logOut(){
+        this.__toMenu('Login', {});
+    }
+
 
     render(){
         return (
@@ -124,9 +128,9 @@ class Profile extends React.Component{
                             </View>
                         </View>
                     </View>
-                    <View style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
+                    <TouchableOpacity activeOpacity={.5} onPress={()=>this.logOut()} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
                         <Text style={[GStyle.textWhite]}>退出登录</Text>
-                    </View>
+                    </TouchableOpacity>
                     <View style={[GStyle.mgb20]}/>
                 </ScrollView>
                 <Modals style={[styles.codeModal]}
