@@ -49,14 +49,14 @@ class AccountDetail extends React.Component{
         const contentInset = { top: 30, bottom: 30 }
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 120},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt10]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.rowCenter]}>
+                    <View style={[GStyle.row]}>
                         <View style={[styles.logo, GStyle.mgl10]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/logo_light.png')}></Image>
                         </View>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
-                            <Text style={[GStyle.textDarkX]}>7月累计收益</Text>
-                            <Text style={[GStyle.textWhite,GStyle.textXl]}>0<Text style={[GStyle.textDarkX, GStyle.textMd]}> GN</Text></Text>
+                            <Text style={[GStyle.textDarkX,GStyle.textSm]}>7月累计收益</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textMd]}>0<Text style={[GStyle.textDarkX,GStyle.textSm]}> GN</Text></Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
                         </View>
@@ -66,15 +66,14 @@ class AccountDetail extends React.Component{
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => this.setState({isVisible: true})}>
-                        <Text style={[GStyle.black]}>{this.state.item || items[0]}</Text>
+                        <Text style={[GStyle.black,GStyle.textSm]}>{this.state.item || items[0]}</Text>
                     </TouchableOpacity>
                     <ListPopover
                         list={items}
                         popoverStyle={{
                             backgroundColor: '#fff',
                             width: 100,
-                            borderRadius: 5,
-
+                            borderRadius: 5
                         }}
                         containerStyle={{
                             alignItems: 'center',

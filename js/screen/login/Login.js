@@ -71,32 +71,32 @@ class Login extends React.Component{
                             // 登录
                             <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>用户名</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>用户名</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请输入用户名'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(login_username) => this.setState({login_username})}
                                         value={this.state.login_username}
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>密     码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>密     码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请输入密码'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(login_password) => this.setState({login_password})}
                                         value={this.state.login_password}
                                         secureTextEntry={true}
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>验证码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>验证码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请输入验证码'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(login_verify) => this.setState({login_verify})}
                                         value={this.state.login_verify}
                                     />
@@ -107,75 +107,75 @@ class Login extends React.Component{
                             // 注册
                             <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>用户名</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>用户名</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'6-16个中英文，下划线'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(login_username) => this.setState({login_username})}
                                         value={this.state.login_username}
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>昵称</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>昵称</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'2-16个中英文、符号'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(register_username) => this.setState({register_username})}
                                         value={this.state.register_username}
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>登录密码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>登录密码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请输入登录密码'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(register_password) => this.setState({register_password})}
                                         value={this.state.register_password}
                                         secureTextEntry={true}
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>确认登录密码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>确认登录密码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请再次输入登录密码'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(register_confirm_password) => this.setState({register_confirm_password})}
                                         value={this.state.register_confirm_password}
                                         secureTextEntry={true}
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>登录密码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>登录密码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请输入提币密码'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(register_draw_password) => this.setState({register_draw_password})}
                                         value={this.state.register_draw_password}
                                         secureTextEntry={true}
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>确认提币密码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>确认提币密码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请再次输入提币密码'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(register_confirm_draw_password) => this.setState({register_confirm_draw_password})}
                                         value={this.state.register_confirm_draw_password}
                                         secureTextEntry={true}
                                     />
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>验证码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>验证码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请输入验证码'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(register_verify) => this.setState({register_verify})}
                                         value={this.state.register_verify}
                                     />
@@ -194,7 +194,7 @@ class Login extends React.Component{
                             </TouchableOpacity>
                     }
 
-                    <View style={[GStyle.mgb10]}></View>
+                    <View style={[GStyle.mgb20]}></View>
                 </ScrollView>
             </View>
         );

@@ -39,7 +39,7 @@ class Recommend extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 120},GStyle.pd20]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.pd20]}>
 
                 </ImageBackground>
                 <View style={[styles.InputWrap,GStyle.row,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
@@ -55,7 +55,7 @@ class Recommend extends React.Component{
                     </View>
                 </View>
                 <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
-                    <Text style={[GStyle.textWhite]}>推荐绑定</Text>
+                    <Text style={[GStyle.textWhite,GStyle.textSm]}>推荐绑定</Text>
                 </TouchableOpacity>
 
             </View>

@@ -34,14 +34,14 @@ class BindMine extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 120},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt10]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 120},GStyle.rowCenter]}>
+                    <View style={[GStyle.row]}>
                         <View style={[styles.logo, GStyle.mgl10]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/google.png')}></Image>
                         </View>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
-                            <Text style={[GStyle.textDarkX]}> </Text>
-                            <Text style={[GStyle.textWhite,GStyle.textXl]}>矿机绑定</Text>
+                            <Text style={[GStyle.textDarkX,GStyle.textSm]}> </Text>
+                            <Text style={[GStyle.textWhite,GStyle.textMd]}>矿机绑定</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
                         </View>
@@ -51,13 +51,13 @@ class BindMine extends React.Component{
                     <TextInput
                         underlineColorAndroid={'transparent'}
                         placeholder={'设备密钥'}
-                        style={[GStyle.flex12]}
+                        style={[GStyle.flex12,GStyle.textSm]}
                         onChangeText={(keys) => this.setState({keys})}
                         value={this.state.keys}
                     />
                 </View>
                 <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
-                    <Text style={[GStyle.textWhite]}>矿机绑定</Text>
+                    <Text style={[GStyle.textWhite,GStyle.textSm]}>矿机绑定</Text>
                 </TouchableOpacity>
 
             </View>

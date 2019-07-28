@@ -69,8 +69,8 @@ class Profile extends React.Component{
                 <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 140},GStyle.pd20]}>
                     <View style={[GStyle.row, GStyle.mgt15]}>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
-                            <Text style={[GStyle.textDarkX,GStyle.textXxxl,GStyle.textBold]}>AndyChen</Text>
-                            <Text style={[GStyle.textWhite,GStyle.textLg]}>{this.state.user_name}</Text>
+                            <Text style={[GStyle.textDarkX,GStyle.textXxl,GStyle.textBold]}>AndyChen</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textMd]}>{this.state.user_name}</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
                             <TouchableOpacity activeOpacity={.5} onPress={()=>this.showCode()}>
@@ -82,54 +82,54 @@ class Profile extends React.Component{
                 <ScrollView style={[{marginTop: -50}]}>
                     <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                         <TouchableOpacity onPress={()=>this.goToRecommend()} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
-                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>绑定推荐</Text>
+                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>绑定推荐</Text>
                             <View>
-                                <FAIcon name="angle-right" size={20}></FAIcon>
+                                <FAIcon name="angle-right" size={18}></FAIcon>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={()=>this.goToMyRecommend()} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
-                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>我推荐的会员</Text>
+                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>我推荐的会员</Text>
                             <View>
-                                <FAIcon name="angle-right" size={20}></FAIcon>
+                                <FAIcon name="angle-right" size={18}></FAIcon>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.pdh20]}>
-                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>提币记录</Text>
+                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>提币记录</Text>
                             <View>
-                                <FAIcon name="angle-right" size={20}></FAIcon>
+                                <FAIcon name="angle-right" size={18}></FAIcon>
                             </View>
                         </TouchableOpacity>
                     </View>
                     <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                         <TouchableOpacity onPress={()=>this.goToBindGoogleCode()} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
-                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>绑定谷歌验证码</Text>
+                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>绑定谷歌验证码</Text>
                             <View>
-                                <FAIcon name="angle-right" size={20}></FAIcon>
+                                <FAIcon name="angle-right" size={18}></FAIcon>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={()=>this.goToChangePassword('login')} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh20]}>
-                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>修改登录密码</Text>
+                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>修改登录密码</Text>
                             <View>
-                                <FAIcon name="angle-right" size={20}></FAIcon>
+                                <FAIcon name="angle-right" size={18}></FAIcon>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={()=>this.goToChangePassword('draw')} activeOpacity={.5} style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.pdh20]}>
-                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>修改提币密码</Text>
+                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>修改提币密码</Text>
                             <View>
-                                <FAIcon name="angle-right" size={20}></FAIcon>
+                                <FAIcon name="angle-right" size={18}></FAIcon>
                             </View>
                         </TouchableOpacity>
                     </View>
                     <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                         <View style={[GStyle.posRowBetween,GStyle.pdt15,GStyle.pdb15,GStyle.pdh20]}>
-                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>当前版本</Text>
+                            <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>当前版本</Text>
                             <View>
-                               <Text style={[GStyle.textDark,GStyle.textXl]}>1.0.0</Text>
+                               <Text style={[GStyle.textDark,GStyle.textMd]}>1.0.0</Text>
                             </View>
                         </View>
                     </View>
                     <TouchableOpacity activeOpacity={.5} onPress={()=>this.logOut()} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
-                        <Text style={[GStyle.textWhite]}>退出登录</Text>
+                        <Text style={[GStyle.textWhite,GStyle.textSm]}>退出登录</Text>
                     </TouchableOpacity>
                     <View style={[GStyle.mgb20]}/>
                 </ScrollView>

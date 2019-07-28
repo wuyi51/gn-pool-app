@@ -94,28 +94,28 @@ class Miner extends React.Component{
 
     _renderItem({item}){
         return (
-            <TouchableOpacity activeOpacity={.8}  onPress={()=>this.goToDetail()} style={[styles.itemView,GStyle.mgl15,GStyle.mgr15,GStyle.mgb15,GStyle.pd15]}>
+            <TouchableOpacity activeOpacity={.8}  onPress={()=>this.goToDetail()} style={[styles.itemView,GStyle.mgl15,GStyle.mgr15,GStyle.mgb15,GStyle.pdh15,GStyle.rowCenter]}>
                 <View style={[GStyle.posRowBetween]}>
-                    <Text style={[GStyle.textPrimary]}>状态：
+                    <Text style={[GStyle.textPrimary,GStyle.textSm]}>状态：
                         <Text style={[item.status === 'ON' ? GStyle.textPrimary : GStyle.textError]}>{item.status === 'ON' ? '在线' : '离线'}</Text>
                         {
                             item.status === 'ON' ?
-                                <Text style={[item.mineStatus === 'ON' ? GStyle.textPrimary : GStyle.textError]}> {item.mineStatus === 'ON' ? '(挖坑中)' : '(未挖坑)'}</Text>
+                                <Text style={[GStyle.textSm,item.mineStatus === 'ON' ? GStyle.textPrimary : GStyle.textError]}> {item.mineStatus === 'ON' ? '(挖坑中)' : '(未挖坑)'}</Text>
                                 :
                                 <Text/>
                         }
 
                     </Text>
-                    <Text style={[GStyle.textPrimary]}>算力：1GB</Text>
+                    <Text style={[GStyle.textPrimary,GStyle.textSm]}>算力：1GB</Text>
                 </View>
-                <Text style={[GStyle.textPrimary,GStyle.mgt5]}>设备ID：{item.id}</Text>
+                <Text  numberOfLines={1} style={[GStyle.textPrimary,GStyle.mgt5,GStyle.textSm]}>设备ID：{item.id}</Text>
                 <View style={[GStyle.posRowBetween,GStyle.mgt5]}>
-                    <Text numberOfLines={1} style={[GStyle.textPrimary,{width:WINDOWS_WIDTH - 120}]}>押注地址：ca92097fdbc424f6f8a2f8a98cf4acb9ca92097fdbc4</Text>
-                    <Text style={[item.stakeStatus === 'Y' ? GStyle.textPrimary : GStyle.textError]}>{item.stakeStatus === 'Y' ? '(已押注)' : '(未押注)'}</Text>
+                    <Text numberOfLines={1} style={[GStyle.textPrimary,GStyle.textSm,{width:WINDOWS_WIDTH - 120}]}>押注地址：ca92097fdbc424f6f8a2f8a98cf4acb9ca92097fdbc4</Text>
+                    <Text style={[GStyle.textSm,item.stakeStatus === 'Y' ? GStyle.textPrimary : GStyle.textError]}>{item.stakeStatus === 'Y' ? '(已押注)' : '(未押注)'}</Text>
                 </View>
                 <View style={[GStyle.posRowBetween,GStyle.mgt5]}>
-                    <Text style={[GStyle.textPrimary]}>描述：用来搜索</Text>
-                    <Text style={[GStyle.textPrimary]}>最后上线：07-16 06:41</Text>
+                    <Text style={[GStyle.textPrimary,GStyle.textSm]}>描述：用来搜索</Text>
+                    <Text style={[GStyle.textPrimary,GStyle.textSm]}>最后上线：07-16 06:41</Text>
                 </View>
             </TouchableOpacity>
         )
@@ -239,14 +239,14 @@ class Miner extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#f2f2f2'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt15]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.rowCenter]}>
+                    <View style={[GStyle.row, GStyle.mgl15,GStyle.mgr15]}>
                         <View style={[styles.logo, GStyle.mgl10]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/miner_w.png')}></Image>
                         </View>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
                             <Text style={[GStyle.textDarkX]}> </Text>
-                            <Text style={[GStyle.textWhite,GStyle.textMd]}>矿机<Text style={[GStyle.textDarkX, GStyle.textXl]}> 4</Text> 台， 在线<Text style={[GStyle.textDarkX, GStyle.textXl]}> 0</Text> 台</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textSm]}>矿机<Text style={[GStyle.textDarkX, GStyle.textMd]}> 4</Text> 台， 在线<Text style={[GStyle.textDarkX, GStyle.textMd]}> 0</Text> 台</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
                             <TouchableOpacity activeOpacity={.5} onPress={()=>this.goToBindMiner()} style={[styles.addWrap,GStyle.posCC, GStyle.row]}>
@@ -271,12 +271,12 @@ class Miner extends React.Component{
                             >
                                 {
                                     this.state.status === 0 ?
-                                        <Text style={[GStyle.textBlack]}>状态</Text>
+                                        <Text style={[GStyle.textBlack,GStyle.textSm]}>状态</Text>
                                         :
                                         this.state.status === 1 ?
-                                            <Text style={[styles.textGreen]}>在线</Text>
+                                            <Text style={[styles.textGreen,GStyle.textSm]}>在线</Text>
                                             :
-                                            <Text style={[GStyle.textError]}>离线</Text>
+                                            <Text style={[GStyle.textError,GStyle.textSm]}>离线</Text>
 
                                 }
                             </TouchableOpacity>
@@ -298,12 +298,12 @@ class Miner extends React.Component{
                             >
                                 {
                                     this.state.mining === 0 ?
-                                        <Text style={[GStyle.textBlack]}>挖矿</Text>
+                                        <Text style={[GStyle.textBlack,GStyle.textSm]}>挖矿</Text>
                                         :
                                         this.state.mining === 1 ?
-                                            <Text style={[styles.textGreen]}>挖矿中</Text>
+                                            <Text style={[styles.textGreen,GStyle.textSm]}>挖矿中</Text>
                                             :
-                                            <Text style={[GStyle.textError]}>未挖矿</Text>
+                                            <Text style={[GStyle.textError,GStyle.textSm]}>未挖矿</Text>
 
                                 }
                             </TouchableOpacity>
@@ -326,12 +326,12 @@ class Miner extends React.Component{
                             >
                                 {
                                     this.state.stake === 0 ?
-                                        <Text style={[GStyle.textBlack]}>押注</Text>
+                                        <Text style={[GStyle.textBlack,GStyle.textSm]}>押注</Text>
                                         :
                                         this.state.stake === 1 ?
-                                            <Text style={[styles.textGreen]}>已押注</Text>
+                                            <Text style={[styles.textGreen,GStyle.textSm]}>已押注</Text>
                                             :
-                                            <Text style={[GStyle.textError]}>未押注</Text>
+                                            <Text style={[GStyle.textError,GStyle.textSm]}>未押注</Text>
 
                                 }
                             </TouchableOpacity>
@@ -348,7 +348,7 @@ class Miner extends React.Component{
                                 <TextInput
                                     underlineColorAndroid={'transparent'}
                                     placeholder={'设备描述'}
-                                    style={[GStyle.flex12,styles.searchInput]}
+                                    style={[GStyle.flex12,styles.searchInput,GStyle.textSm]}
                                     onChangeText={(keywords) => this.setState({keywords})}
                                     value={this.state.keywords}
                                     />
@@ -358,7 +358,7 @@ class Miner extends React.Component{
 
 
                     <View style={[styles.status_bar]}>
-                        <Text style={[GStyle.textBlack]}>搜索</Text>
+                        <Text style={[GStyle.textBlack,GStyle.textSm]}>搜索</Text>
                     </View>
                     <TouchableOpacity onPress={()=>{this._changeSearchType()}} activeOpacity={.5} style={[styles.status_bar_change]}>
                         <Icon name='md-arrow-dropdown' size={22} color={Colors.black}></Icon>

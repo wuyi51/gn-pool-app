@@ -37,14 +37,14 @@ class ChangePassword extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 120},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt10]}>
-                        <View style={[styles.logo, GStyle.mgl10]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.rowCenter]}>
+                    <View style={[GStyle.row]}>
+                        <View style={[styles.logo, GStyle.mgl20]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/key_w.png')}></Image>
                         </View>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
                             <Text style={[GStyle.textDarkX]}> </Text>
-                            <Text style={[GStyle.textWhite,GStyle.textXl]}>修改{this.state.type === 'login' ? '登录' : '提币' }密码</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textMd]}>修改{this.state.type === 'login' ? '登录' : '提币' }密码</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
                         </View>
@@ -52,40 +52,40 @@ class ChangePassword extends React.Component{
                 </ImageBackground>
                 <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                     <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>新  密  码</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>新  密  码</Text>
                         <TextInput
                             underlineColorAndroid={'transparent'}
                             placeholder={'请输入新密码，6-16位字符'}
-                            style={[GStyle.flex12]}
+                            style={[GStyle.flex12,GStyle.textSm]}
                             onChangeText={(password) => this.setState({password})}
                             value={this.state.password}
                             secureTextEntry={true}
                         />
                     </View>
                     <View style={[GStyle.row,GStyle.pdh10,GStyle.bdDarkX,GStyle.bdb,]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>重复密码</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>重复密码</Text>
                         <TextInput
                             underlineColorAndroid={'transparent'}
                             placeholder={'请输再次入新密码'}
-                            style={[GStyle.flex12]}
+                            style={[GStyle.flex12,GStyle.textSm]}
                             onChangeText={(confirm_password) => this.setState({confirm_password})}
                             value={this.state.confirm_password}
                             secureTextEntry={true}
                         />
                     </View>
                     <View style={[GStyle.row,GStyle.pdh10]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>谷歌验证码</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>谷歌验证码</Text>
                         <TextInput
                             underlineColorAndroid={'transparent'}
                             placeholder={'请输入谷歌验证码'}
-                            style={[GStyle.flex12]}
+                            style={[GStyle.flex12,GStyle.textSm]}
                             onChangeText={(code) => this.setState({code})}
                             value={this.state.code}
                         />
                     </View>
                 </View>
                 <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
-                    <Text style={[GStyle.textWhite]}>修改</Text>
+                    <Text style={[GStyle.textWhite,GStyle.textSm]}>修改</Text>
                 </TouchableOpacity>
 
             </View>

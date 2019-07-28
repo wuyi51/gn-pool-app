@@ -46,14 +46,14 @@ class BindGoogleCode extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 120},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt10]}>
-                        <View style={[styles.logo, GStyle.mgl10]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.rowCenter]}>
+                    <View style={[GStyle.row]}>
+                        <View style={[styles.logo, GStyle.mgl10,GStyle.mgl20]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/google.png')}></Image>
                         </View>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
-                            <Text style={[GStyle.textDarkX]}> </Text>
-                            <Text style={[GStyle.textWhite,GStyle.textXl]}>{this.state.step === 1 ? '谷歌验证码注册' : '谷歌验证码密钥'}</Text>
+                            <Text style={[GStyle.textDarkX,GStyle.textSm]}> </Text>
+                            <Text style={[GStyle.textWhite,GStyle.textMd]}>{this.state.step === 1 ? '谷歌验证码注册' : '谷歌验证码密钥'}</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
                         </View>
@@ -64,17 +64,17 @@ class BindGoogleCode extends React.Component{
                         this.state.step === 1 ?
                             <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                                 <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>用户名</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>用户名</Text>
                                     <View style={[GStyle.flex12]}>
-                                        <Text style={[GStyle.textBlack]}>AndyChen</Text>
+                                        <Text style={[GStyle.textBlack,GStyle.textSm]}>AndyChen</Text>
                                     </View>
                                 </View>
                                 <View style={[GStyle.row,GStyle.pdh10]}>
-                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>提币密码</Text>
+                                    <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>提币密码</Text>
                                     <TextInput
                                         underlineColorAndroid={'transparent'}
                                         placeholder={'请输入提币密码'}
-                                        style={[GStyle.flex12]}
+                                        style={[GStyle.flex12,GStyle.textSm]}
                                         onChangeText={(draw_password) => this.setState({draw_password})}
                                         value={this.state.draw_password}
                                         secureTextEntry={true}
@@ -93,25 +93,25 @@ class BindGoogleCode extends React.Component{
                                             fgColor='white'/>
                                     </View>
                                     <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
-                                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>密钥</Text>
+                                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>密钥</Text>
                                         <View style={[GStyle.flex12]}>
-                                            <Text style={[GStyle.textBlack]}>{this.state.key}</Text>
+                                            <Text style={[GStyle.textBlack,GStyle.textSm]}>{this.state.key}</Text>
                                         </View>
                                     </View>
                                     <View style={[GStyle.row,GStyle.pdh10]}>
-                                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>验证码</Text>
+                                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>验证码</Text>
                                         <TextInput
                                             underlineColorAndroid={'transparent'}
                                             placeholder={'请输入谷歌验证码'}
-                                            style={[GStyle.flex12]}
+                                            style={[GStyle.flex12,GStyle.textSm]}
                                             onChangeText={(code) => this.setState({code})}
                                             value={this.state.code}
                                         />
                                     </View>
                                 </View>
                                 <View style={[GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
-                                    <Text style={[GStyle.textBlack]}>注意：系统不提供谷歌验证码找回服务</Text>
-                                    <Text style={[GStyle.textBlack]}>请妥善保存谷歌验证码</Text>
+                                    <Text style={[GStyle.textBlack,GStyle.textSm]}>注意：系统不提供谷歌验证码找回服务</Text>
+                                    <Text style={[GStyle.textBlack,GStyle.textSm]}>请妥善保存谷歌验证码</Text>
                                 </View>
                             </View>
 
@@ -120,11 +120,11 @@ class BindGoogleCode extends React.Component{
                     {
                         this.state.step === 1 ?
                             <TouchableOpacity onPress={()=>this.nextStep()} activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
-                                <Text style={[GStyle.textWhite]}>注册</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textSm]}>注册</Text>
                             </TouchableOpacity>
                             :
                             <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt15,GStyle.posCC]}>
-                                <Text style={[GStyle.textWhite]}>绑定</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textSm]}>绑定</Text>
                             </TouchableOpacity>
                     }
                     <View style={[GStyle.pdb15]}></View>

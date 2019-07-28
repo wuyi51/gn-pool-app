@@ -42,26 +42,26 @@ class Index extends React.Component{
             <View style={ [GStyle.container] }>
                 <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 170},GStyle.pd20]}>
                      <View>
-                        <Text style={ [GStyle.textWhite, GStyle.textXxxl, GStyle.textBold] }>荒野大镖客</Text>
-                        <Text style={ [GStyle.textDarkX] }>账号状态: 正常</Text>
+                        <Text style={ [GStyle.textWhite, GStyle.textXxl, GStyle.textBold] }>荒野大镖客</Text>
+                        <Text style={ [GStyle.textDarkX,GStyle.textSm] }>账号状态: 正常</Text>
                      </View>
                     <View style={[GStyle.row, GStyle.mgt25]}>
                         <View style={[styles.logo, GStyle.mgl10]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/logo_light.png')}></Image>
                         </View>
                         <View style={[GStyle.flex12,GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
-                            <Text style={[GStyle.textWhite,GStyle.textXl,GStyle.bdb,GStyle.pdb5,styles.bdCWhite]}>0.0092638 <Text style={[GStyle.textDarkX, GStyle.textMd]}> GN</Text></Text>
+                            <Text style={[GStyle.textWhite,,GStyle.textMd,GStyle.bdb,GStyle.pdb5,styles.bdCWhite]}>0.0092638 <Text style={[GStyle.textDarkX, GStyle.textMd]}> GN</Text></Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
                             <View style={[ GStyle.row, GStyle.posCC, GStyle.bgWhite,styles.btn]}>
-                                <Text style={[GStyle.center,GStyle.textBlack]}>提币</Text>
+                                <Text style={[GStyle.center,GStyle.textBlack,GStyle.textSm]}>提币</Text>
                             </View>
                         </View>
                     </View>
                 </ImageBackground>
                 <ScrollView>
                     <TouchableOpacity activeOpacity={0.5}  onPress={()=>this.goToAccountDetail()} style={ [GStyle.mgt15,GStyle.mgr15] }>
-                        <Text style={[GStyle.right,GStyle.textBlack]}>账户详情</Text>
+                        <Text style={[GStyle.right,GStyle.textBlack,GStyle.textSm]}>账户详情</Text>
                     </TouchableOpacity>
                     <View style={ [GStyle.mgl0,GStyle.mgr10,GStyle.row,GStyle.mgt15] }>
                         <View style={[styles.lineDouble,GStyle.flex12,GStyle.mgr10,GStyle.mgl10]}>
@@ -71,8 +71,8 @@ class Index extends React.Component{
                                 <Image style={[styles.coverImg]} source={require('../../../res/image/sky_0_gray.png')}></Image>
                             </View>
                             <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
-                                <Text style={[GStyle.textWhite]}>自有算力</Text>
-                                <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textSm]}>自有算力</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textRight,GStyle.textSm]}>0T/0T</Text>
                             </View>
                         </View>
                         <View style={[styles.lineDouble,GStyle.flex12]}>
@@ -81,8 +81,8 @@ class Index extends React.Component{
                                 <Image style={[styles.coverImg]} source={require('../../../res/image/sky_1_gray.png')}></Image>
                             </View>
                             <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
-                                <Text style={[GStyle.textWhite]}>自有算力</Text>
-                                <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textSm]}>自有算力</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textRight,GStyle.textSm]}>0T/0T</Text>
                             </View>
                         </View>
                     </View>
@@ -93,8 +93,8 @@ class Index extends React.Component{
                                 <Image style={[styles.coverImg]} source={require('../../../res/image/sky_2_gray.png')}></Image>
                             </View>
                             <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
-                                <Text style={[GStyle.textWhite]}>自有算力</Text>
-                                <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textSm]}>自有算力</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textRight,GStyle.textSm]}>0T/0T</Text>
                             </View>
                         </View>
                         <View style={[styles.lineDouble,GStyle.flex12]}>
@@ -103,8 +103,8 @@ class Index extends React.Component{
                                 <Image style={[styles.coverImg]} source={require('../../../res/image/sky_3_gray.png')}></Image>
                             </View>
                             <View style={[styles.info,GStyle.pd10,GStyle.posColBetween]}>
-                                <Text style={[GStyle.textWhite]}>自有算力</Text>
-                                <Text style={[GStyle.textWhite,GStyle.textRight]}>0T/0T</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textSm]}>自有算力</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textRight,GStyle.textSm]}>0T/0T</Text>
                             </View>
                         </View>
                     </View>
@@ -116,8 +116,8 @@ class Index extends React.Component{
                                 <Image style={[styles.coverImg]} source={require('../../../res/image/sky_4_gray.png')}></Image>
                             </View>
                             <View style={[styles.singer_info,GStyle.pd10,GStyle.posRowBetween]}>
-                                <Text style={[GStyle.textWhite,GStyle.center]}>全网有效矿工</Text>
-                                <Text style={[GStyle.textWhite,GStyle.center]}>0人</Text>
+                                <Text style={[GStyle.textWhite,GStyle.center,GStyle.textSm]}>全网有效矿工</Text>
+                                <Text style={[GStyle.textWhite,GStyle.center,GStyle.textSm]}>0人</Text>
                             </View>
                         </View>
                     </View>

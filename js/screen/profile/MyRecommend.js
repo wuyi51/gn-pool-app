@@ -61,13 +61,13 @@ class MyRecommend extends React.Component{
         return (
             <View style={[GStyle.posRowBetween,GStyle.mgb10,GStyle.mgt10]}>
                 <View style={[GStyle.center,GStyle.mgl15,GStyle.flex4]}>
-                    <Text style={[GStyle.textPrimary]}>{item.name}</Text>
+                    <Text style={[GStyle.textPrimary,GStyle.textSm]}>{item.name}</Text>
                 </View>
                 <View style={[GStyle.center,GStyle.flex4]}>
-                    <Text style={[GStyle.textPrimary,GStyle.center]}>0 GB</Text>
+                    <Text style={[GStyle.textPrimary,GStyle.center,GStyle.textSm]}>0 GB</Text>
                 </View>
                 <View style={[GStyle.center,GStyle.mgr15,GStyle.flex4]}>
-                    <Text style={[GStyle.textPrimary,GStyle.right]}>0 人</Text>
+                    <Text style={[GStyle.textPrimary,GStyle.right,GStyle.textSm]}>0 人</Text>
                 </View>
             </View>
         )
@@ -104,27 +104,27 @@ class MyRecommend extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 110},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt20]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.rowCenter]}>
+                    <View style={[GStyle.row, GStyle.mgl15,GStyle.mgr15]}>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
-                            <Text style={[GStyle.textDarkX]}>用户昵称：荒野大镖客</Text>
-                            <Text style={[GStyle.textDarkX,GStyle.mgt5]}>有效算力: 0 GB</Text>
+                            <Text style={[GStyle.textDarkX,GStyle.textSm]}>用户昵称：荒野大镖客</Text>
+                            <Text style={[GStyle.textDarkX,GStyle.mgt5,GStyle.textSm]}>有效算力: 0 GB</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
-                            <Text style={[GStyle.textDarkX,GStyle.mgt20]}>会员总数：0 人</Text>
+                            <Text style={[GStyle.textDarkX,GStyle.mgt20,GStyle.textSm]}>会员总数：0 人</Text>
                         </View>
                     </View>
                 </ImageBackground>
                 <View style={[styles.listWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                     <View style={[styles.listTop,GStyle.posRowBetween]}>
                         <View style={[GStyle.center,GStyle.mgl15]}>
-                            <Text style={[GStyle.textWhite]}>用户昵称</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textSm]}>用户昵称</Text>
                         </View>
                         <View style={[GStyle.center]}>
-                            <Text style={[GStyle.textWhite]}>有效算力</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textSm]}>有效算力</Text>
                         </View>
                         <View style={[GStyle.center,GStyle.mgr15]}>
-                            <Text style={[GStyle.textWhite]}>会员总数</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textSm]}>会员总数</Text>
                         </View>
                     </View>
                     <View style={[{maxHeight: WINDOWS_HEIGHT - 290}]}>

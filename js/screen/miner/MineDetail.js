@@ -55,16 +55,16 @@ class MineDetail extends React.Component{
         const contentInset = { top: 30, bottom: 30 }
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt15]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.rowCenter]}>
+                    <View style={[GStyle.row,GStyle.mgl15,GStyle.mgr15]}>
                         <View style={[styles.logo, GStyle.mgl10]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/miner_w.png')}></Image>
                         </View>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
-                            <Text style={[GStyle.textDarkX]}>ID: 5cd718cdf706dc3072be3875b4a076f4</Text>
+                            <Text style={[GStyle.textDarkX,GStyle.textSm]}>ID: 5cd718cdf706dc3072be3875b4a076f4</Text>
                             <View style={[GStyle.posRowBetween,GStyle.mgt5]}>
-                                <Text style={[GStyle.textWhite]}>在线状态：离线(未挖坑)</Text>
-                                <Text style={[GStyle.textWhite]}>设备算力：0GB</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textSm]}>在线状态：离线(未挖坑)</Text>
+                                <Text style={[GStyle.textWhite,GStyle.textSm]}>设备算力：0GB</Text>
                             </View>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
@@ -72,27 +72,27 @@ class MineDetail extends React.Component{
                     </View>
                 </ImageBackground>
                 <View style={[GStyle.posRowBetween,GStyle.mgt15,GStyle.mgl15]}>
-                    <Text style={[GStyle.textBlack]}>押注地址：5cd718cdf706dc3072be3875b4a076f4</Text>
+                    <Text style={[GStyle.textBlack,GStyle.textSm]}>押注地址：5cd718cdf706dc3072be3875b4a076f4</Text>
                 </View>
                 <View style={[GStyle.posRowBetween,GStyle.mgt10,GStyle.mgl15, GStyle.mgr15]}>
-                    <Text style={[GStyle.textBlack]}>押注金额：0 GN  <Text style={[GStyle.textSuccess,GStyle.mgl10]}>  刷新</Text></Text>
-                    <Text style={[GStyle.textBlack]}>押注状态：未押注</Text>
+                    <Text style={[GStyle.textBlack,GStyle.textSm]}>押注金额：0 GN  <Text style={[GStyle.textSuccess,GStyle.mgl10]}>  刷新</Text></Text>
+                    <Text style={[GStyle.textBlack,GStyle.textSm]}>押注状态：未押注</Text>
                 </View>
                 <View style={[GStyle.posRowBetween,GStyle.mgt5,GStyle.mgl15, GStyle.mgr15]}>
-                    <Text style={[GStyle.textBlack]}>设备描述：测试</Text>
+                    <Text style={[GStyle.textBlack,GStyle.textSm]}>设备描述：测试</Text>
                     <TouchableOpacity activeOpacity={.5} onPress={()=>this.goToUnbundling()} style={[styles.unbindBtn,GStyle.posCC]}>
-                        <Text style={[styles.unbindBtnText]}>解绑</Text>
+                        <Text style={[styles.unbindBtnText,GStyle.textSm]}>解绑</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={[GStyle.row,GStyle.posRowBetween,GStyle.mgt20]}>
                     <View style={[GStyle.mgl15,GStyle.mgt10]}>
-                        <Text style={[GStyle.textBlack,GStyle.textLg]}>设备日收益</Text>
+                        <Text style={[GStyle.textBlack,GStyle.textLg,GStyle.textSm]}>设备日收益</Text>
                     </View>
                     <View>
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => this.setState({isVisible: true})}>
-                            <Text style={[GStyle.black]}>{this.state.item || items[0]}</Text>
+                            <Text style={[GStyle.black,GStyle.textSm]}>{this.state.item || items[0]}</Text>
                         </TouchableOpacity>
                         <ListPopover
                             list={items}

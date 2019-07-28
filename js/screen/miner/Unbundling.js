@@ -34,14 +34,14 @@ class Unbundling extends React.Component{
     render(){
         return (
             <View style={ [GStyle.container,{backgroundColor: '#F6F6F6'}] }>
-                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 120},GStyle.pd20]}>
-                    <View style={[GStyle.row, GStyle.mgt10]}>
+                <ImageBackground source={require('../../../res/image/sky.png')} style={[{width: '100%', height: 100},GStyle.rowCenter]}>
+                    <View style={[GStyle.row]}>
                         <View style={[styles.logo, GStyle.mgl10]}>
                             <Image style={ [styles.logo] } source={require('../../../res/image/google.png')}></Image>
                         </View>
                         <View style={[GStyle.flex12, GStyle.logoHeight,GStyle.mgl10,GStyle.rowCenter]}>
                             <Text style={[GStyle.textDarkX]}> </Text>
-                            <Text style={[GStyle.textWhite,GStyle.textXl]}>矿机解绑</Text>
+                            <Text style={[GStyle.textWhite,GStyle.textMd]}>矿机解绑</Text>
                         </View>
                         <View style={[GStyle.posCT, GStyle.row,GStyle.logoHeight,GStyle.mgl10]}>
                         </View>
@@ -49,48 +49,48 @@ class Unbundling extends React.Component{
                 </ImageBackground>
                 <View style={[styles.InputWrap,GStyle.mgt20,GStyle.mgl20,GStyle.mgr20]}>
                     <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>ID</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>ID</Text>
                         <View style={[GStyle.flex12]}>
-                            <Text style={[GStyle.textBlack]}>5cd718cdf706dc3072be3875b4a076f4</Text>
+                            <Text style={[GStyle.textBlack,GStyle.textSm]}>5cd718cdf706dc3072be3875b4a076f4</Text>
                         </View>
                     </View>
                     <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>设备算力</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>设备算力</Text>
                         <View style={[GStyle.flex12]}>
-                            <Text style={[GStyle.textBlack]}>0 GB</Text>
+                            <Text style={[GStyle.textBlack,GStyle.textSm]}>0 GB</Text>
                         </View>
                     </View>
                     <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>设备状态</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>设备状态</Text>
                         <View style={[GStyle.flex12]}>
-                            <Text style={[GStyle.textBlack]}>离线</Text>
+                            <Text style={[GStyle.textBlack,GStyle.textSm]}>离线</Text>
                         </View>
                     </View>
                     <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>挖矿状态</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>挖矿状态</Text>
                         <View style={[GStyle.flex12]}>
-                            <Text style={[GStyle.textBlack]}>未挖矿</Text>
+                            <Text style={[GStyle.textBlack,GStyle.textSm]}>未挖矿</Text>
                         </View>
                     </View>
                     <View style={[GStyle.row,GStyle.pdt15,GStyle.pdb15,GStyle.bdDarkX,GStyle.bdb,GStyle.pdh10]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>押注状态</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>押注状态</Text>
                         <View style={[GStyle.flex12]}>
-                            <Text style={[GStyle.textBlack]}>未押注</Text>
+                            <Text style={[GStyle.textBlack,GStyle.textSm]}>未押注</Text>
                         </View>
                     </View>
                     <View style={[GStyle.row,GStyle.pdh10]}>
-                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10]}>验证码</Text>
+                        <Text style={[GStyle.center,GStyle.textBlack,GStyle.mgr10,GStyle.textSm]}>验证码</Text>
                         <TextInput
                             underlineColorAndroid={'transparent'}
                             placeholder={'请输入谷歌验证码'}
-                            style={[GStyle.flex12]}
+                            style={[GStyle.flex12,GStyle.textSm]}
                             onChangeText={(code) => this.setState({code})}
                             value={this.state.code}
                         />
                     </View>
                 </View>
                 <TouchableOpacity activeOpacity={.5} style={[styles.submitBtn,GStyle.center,GStyle.mgt20,GStyle.posCC]}>
-                    <Text style={[GStyle.textWhite]}>矿机解绑</Text>
+                    <Text style={[GStyle.textWhite,GStyle.textSm]}>矿机解绑</Text>
                 </TouchableOpacity>
 
             </View>
